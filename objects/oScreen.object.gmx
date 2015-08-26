@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Screen Init
 screen = -1;
+shake = 0;
 </string>
           </argument>
         </arguments>
@@ -51,7 +52,7 @@ screen = -1;
             <kind>1</kind>
             <string>/// Reset Drawing to Screen
 surface_reset_target();
-draw_surface_ext(screen, 0, 0, 1, 1, 0, c_white, 1); // Draws the screen surface, which has had all the objects' images written to it during normal draw event
+draw_surface_ext(screen, shake, shake, 1, 1, 0, c_white, 1); // Draws the screen surface, which has had all the objects' images written to it during normal draw event
 </string>
           </argument>
         </arguments>

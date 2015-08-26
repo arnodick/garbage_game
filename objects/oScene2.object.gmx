@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///Inits
 instance_deactivate_region(0, 0, room_width, room_height, false, true);
+
+text_angle = 5;
 </string>
           </argument>
         </arguments>
@@ -52,16 +54,55 @@ instance_deactivate_region(0, 0, room_width, room_height, false, true);
             <string>///Game controls
 //instance_deactivate_region(0, 0, room_width, room_height, false, true);
 
+text_angle += 1;
+
+if (global.score &gt; 9)
+{
+    text_angle += irandom(20);
+}
+
 if (!instance_exists(oMouse))
 {
+    global.score++;
     with(all)
     {
         instance_destroy();
     }
-    room_goto(rScene3);
+    room_goto(rScene2);
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///SCORE
+
+
+draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_yellow, c_yellow, c_yellow, c_yellow, true);
+draw_text_ext_transformed_colour(0, 0, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
+if (global.score &gt; 9)
+{
+    draw_text_ext_transformed_colour(room_width/2, room_height/2, "U WON", 10, 160, 4, 4, text_angle, c_red, c_red, c_red, c_red, 1);
+}
 </string>
           </argument>
         </arguments>

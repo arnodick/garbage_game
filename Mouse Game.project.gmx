@@ -6,8 +6,12 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_squeak</sound>
+    <sound>sound\snd_garbage1</sound>
+    <sound>sound\snd_garbage2</sound>
+    <sound>sound\snd_garbage3</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sprThought</sprite>
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprHand</sprite>
     <sprite>sprites\sprDoor</sprite>
@@ -22,7 +26,7 @@
     <object>objects\oScreen</object>
     <object>objects\oScene1</object>
     <object>objects\oScene2</object>
-    <object>objects\oScene3</object>
+    <object>objects\oThought</object>
     <object>objects\oMouse</object>
     <object>objects\oHand</object>
     <object>objects\oDoor</object>

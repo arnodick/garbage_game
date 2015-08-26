@@ -51,8 +51,10 @@ sprite_switch = true;
           <argument>
             <kind>1</kind>
             <string>///Controls
-x = mouse_x;
-y = mouse_y;
+
+move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2);
+//x = mouse_x;
+//y = mouse_y;
 
 if (x &lt; 0)
 {
@@ -87,8 +89,8 @@ else if (mouse_check_button_released(mb_left))
     if (oMouse.picked_up == true)
     {
         oMouse.picked_up = false;
-        oMouse.speed = point_distance(xprevious, yprevious, x, y);
-        oMouse.direction = point_direction(xprevious, yprevious, x, y);
+        //oMouse.speed = point_distance(xprevious, yprevious, x, y);
+        //oMouse.direction = point_direction(xprevious, yprevious, x, y);
         //audio_sound_pitch(snd_squeak, 2);
         audio_play_sound(snd_squeak, 1, false);
     }
