@@ -36,7 +36,7 @@ text_angle = -7;
 
 shake_timer = random_range(50, 111);
 
-audio_play_sound(snd_garbage3);
+audio_play_sound(snd_garbage3, 1, false);
 </string>
           </argument>
         </arguments>

@@ -36,7 +36,7 @@ sound[0] = snd_garbage1;
 sound[1] = snd_garbage2;
 sound[2] = snd_garbage3;
 
-audio_play_sound(sound[irandom(2)]);
+audio_play_sound(sound[irandom(2)], 1, false);
 </string>
           </argument>
         </arguments>
