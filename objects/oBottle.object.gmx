@@ -26,9 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
+angle_init = 0;
 picked_up = false;
 sound = snd_squeak;
 room_buffer = 20;
+
+direction = random_range(-53, 12);
+speed = random_range(8, 19);
 </string>
           </argument>
         </arguments>
@@ -52,45 +56,7 @@ room_buffer = 20;
           <argument>
             <kind>1</kind>
             <string>///Controller
-if (picked_up == true)
-{
-    speed = (point_distance(mouse_x, mouse_y, x, y)/2);
-    move_towards_point(mouse_x, mouse_y, speed);
-}
-if (speed &gt; 0)
-{
-    speed -= 1;
-    if (speed &lt; 0)
-    {
-        speed = 0;
-    }
-    else if (speed &gt; 18)
-    {
-        speed = 18;
-    }
-    image_angle -= hspeed*3;
-}
-if (x &lt; room_buffer)
-{
-    x = room_buffer;
-}
-if (y &lt; room_buffer)
-{
-    y = room_buffer;
-}
-if (x &gt; room_width - room_buffer)
-{
-    x = room_width - room_buffer;
-}
-if (y &gt; room_height - room_buffer)
-{
-    y = room_height - room_buffer;
-}
-
-if ( (x &lt;= (oDoor.door_width - room_buffer)) and (y &lt;= room_buffer) )
-{
-    instance_deactivate_object(id);
-}
+thing_grab(angle_init);
 </string>
           </argument>
         </arguments>

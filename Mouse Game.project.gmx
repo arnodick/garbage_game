@@ -23,6 +23,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\thing_grab.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font</font>
   </fonts>

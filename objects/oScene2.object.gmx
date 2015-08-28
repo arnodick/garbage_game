@@ -56,11 +56,25 @@ text_angle = 5;
 
 text_angle += 1;
 
+if (scored == true)
+{
+    global.score++;
+    text_angle = 0;
+    with (oDoor)
+    {
+        oDoor.shake_timer = random_range(50, 111);
+        audio_play_sound(sound[irandom(2)], 1, false);
+    }
+    scored = false;
+}
+
 if (global.score &gt; 9)
 {
     text_angle += irandom(20);
 }
 
+
+/*
 if (!instance_exists(oMouse))
 {
     global.score++;
@@ -70,6 +84,7 @@ if (!instance_exists(oMouse))
     }
     room_goto(rScene2);
 }
+*/
 
 
 </string>
@@ -98,10 +113,10 @@ if (!instance_exists(oMouse))
 
 
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_yellow, c_yellow, c_yellow, c_yellow, true);
-draw_text_ext_transformed_colour(0, 0, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
+draw_text_ext_transformed_colour(5, 5, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
 if (global.score &gt; 9)
 {
-    draw_text_ext_transformed_colour(room_width/2, room_height/2, "U WON", 10, 160, 4, 4, text_angle, c_red, c_red, c_red, c_red, 1);
+    draw_text_ext_transformed_colour(room_width/2, room_height/2, "GOOD ENOUGH", 10, 160, 4, 4, text_angle, c_red, c_red, c_red, c_red, 1);
 }
 </string>
           </argument>
