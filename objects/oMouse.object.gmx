@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oThing</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
+angle_init = 270;
 picked_up = false;
+sound = snd_squeak;
 room_buffer = 20;
 </string>
           </argument>
@@ -55,6 +57,7 @@ if (picked_up == true)
 {
     speed = (point_distance(mouse_x, mouse_y, x, y)/2);
     move_towards_point(mouse_x, mouse_y, speed);
+    image_angle = angle_init - (hspeed*10);
 }
 if (speed &gt; 0)
 {

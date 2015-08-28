@@ -76,23 +76,25 @@ else if (y &gt; room_height)
 if (mouse_check_button_pressed(mb_left))
 {
     image_index = sprite_switch;
-    if (position_meeting(mouse_x, mouse_y, oMouse))
+    if (position_meeting(mouse_x, mouse_y, oThing))
     {
-        oMouse.picked_up = true;
-        //audio_sound_pitch(snd_squeak, 2);
-        audio_play_sound(snd_squeak, 1, false);
+        with (instance_position(mouse_x, mouse_y, oThing) )
+        {
+            picked_up = true;
+            audio_play_sound(sound, 1, false);
+        }
     }
 }
 else if (mouse_check_button_released(mb_left))
 {
     image_index = !sprite_switch;
-    if (oMouse.picked_up == true)
+    with (oThing)
     {
-        oMouse.picked_up = false;
-        //oMouse.speed = point_distance(xprevious, yprevious, x, y);
-        //oMouse.direction = point_direction(xprevious, yprevious, x, y);
-        //audio_sound_pitch(snd_squeak, 2);
-        audio_play_sound(snd_squeak, 1, false);
+        if (picked_up == true)
+        {
+            picked_up = false;
+            audio_play_sound(sound, 1, false);
+        }
     }
 }
 </string>

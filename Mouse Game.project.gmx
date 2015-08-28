@@ -12,10 +12,14 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprThought</sprite>
-    <sprite>sprites\sprMouse</sprite>
-    <sprite>sprites\sprHand</sprite>
     <sprite>sprites\sprDoor</sprite>
     <sprite>sprites\sprFloor</sprite>
+    <sprite>sprites\sprHand</sprite>
+    <sprite>sprites\sprMouse</sprite>
+    <sprite>sprites\sprBottle</sprite>
+    <sprite>sprites\sprTampon</sprite>
+    <sprite>sprites\sprGarbage</sprite>
+    <sprite>sprites\sprite8</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,8 +31,12 @@
     <object>objects\oScene1</object>
     <object>objects\oScene2</object>
     <object>objects\oThought</object>
-    <object>objects\oMouse</object>
     <object>objects\oHand</object>
+    <object>objects\oThing</object>
+    <object>objects\oMouse</object>
+    <object>objects\oBottle</object>
+    <object>objects\oTampon</object>
+    <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
     <object>objects\oFloor</object>
     <object>objects\oDebug</object>
