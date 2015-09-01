@@ -21,7 +21,9 @@
     <sprite>sprites\sprGarbage</sprite>
     <sprite>sprites\sprite8</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\thing_grab.gml</script>
