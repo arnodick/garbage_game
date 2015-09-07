@@ -20,6 +20,7 @@
     <sprite>sprites\sprTampon</sprite>
     <sprite>sprites\sprGarbage</sprite>
     <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\sprHam</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -40,6 +41,7 @@
     <object>objects\oThing</object>
     <object>objects\oMouse</object>
     <object>objects\oBottle</object>
+    <object>objects\oHam</object>
     <object>objects\oTampon</object>
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
