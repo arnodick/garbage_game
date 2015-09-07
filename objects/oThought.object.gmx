@@ -28,6 +28,7 @@
             <string>///Inits
 image_speed = 0.2;
 image_angle = 19;
+angle = 19;
 </string>
           </argument>
         </arguments>
@@ -53,7 +54,9 @@ image_angle = 19;
             <string>///Controls
 move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2);
 
-image_angle += irandom(9);
+angle -= 0.1;
+//image_angle -= irandom_range(9, 17);
+image_angle = (sin(angle))*50;
 
 if (x &lt; 0)
 {
@@ -70,29 +73,6 @@ if (y &lt; 0)
 else if (y &gt; room_height)
 {
     y = room_height;
-}
-
-if (mouse_check_button_pressed(mb_left))
-{
-    image_index = sprite_switch;
-    if (position_meeting(mouse_x, mouse_y, oMouse))
-    {
-        oMouse.picked_up = true;
-        //audio_sound_pitch(snd_squeak, 2);
-        audio_play_sound(snd_squeak, 1, false);
-    }
-}
-else if (mouse_check_button_released(mb_left))
-{
-    image_index = !sprite_switch;
-    if (oMouse.picked_up == true)
-    {
-        oMouse.picked_up = false;
-        oMouse.speed = point_distance(xprevious, yprevious, x, y);
-        oMouse.direction = point_direction(xprevious, yprevious, x, y);
-        //audio_sound_pitch(snd_squeak, 2);
-        audio_play_sound(snd_squeak, 1, false);
-    }
 }
 </string>
           </argument>

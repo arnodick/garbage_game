@@ -26,9 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
+randomize();
 instance_deactivate_region(0, 0, room_width, room_height, false, true);
 
 text_angle = 5;
+
+global.score = 0;
+global.garbage_amount = 0;
+global.room_buffer = 20;
+garbage_total = 30;
+
+game_timer = 0;
 </string>
           </argument>
         </arguments>
@@ -52,41 +60,45 @@ text_angle = 5;
           <argument>
             <kind>1</kind>
             <string>///Game controls
-//instance_deactivate_region(0, 0, room_width, room_height, false, true);
 
 text_angle += 1;
 
-if (scored == true)
+if ( (scored == true) )
 {
-    global.score++;
-    text_angle = 0;
-    with (oDoor)
+    if (!instance_exists(oWin))
     {
-        oDoor.shake_timer = random_range(50, 111);
-        audio_play_sound(sound[irandom(2)], 1, false);
+        global.score++;
+        text_angle = 0;
+        with (oDoor)
+        {
+            oDoor.shake_timer = random_range(50, 111);
+            audio_play_sound(sound[irandom(2)], 1, false);
+        }
+        scored = false;
     }
-    scored = false;
 }
 
-if (global.score &gt; 9)
+if (game_timer &gt;= 240)
 {
-    text_angle += irandom(20);
-}
-
-
-/*
-if (!instance_exists(oMouse))
-{
-    global.score++;
-    with(all)
+    if !(instance_exists(oWin))
     {
-        instance_destroy();
+        instance_create(room_width/2, room_height/2, oWin);
+        text_angle += irandom(20);
     }
-    room_goto(rScene2);
 }
-*/
 
+if (!instance_exists(oDebug))
+{
+    if (keyboard_check_pressed(vk_enter))
+    {
+        instance_create(0, 0, oDebug);
+    }
+}
 
+if (game_timer &lt; 240)
+{
+    game_timer++;
+}
 </string>
           </argument>
         </arguments>
@@ -109,8 +121,8 @@ if (!instance_exists(oMouse))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_background_stretched(background0, 0, 0, 160, 100);
-//draw_background(background0, 0, 0);
+            <string>///Background
+draw_background_stretched(background0, 0, 0, 160, 100);
 </string>
           </argument>
         </arguments>
@@ -135,13 +147,8 @@ if (!instance_exists(oMouse))
             <kind>1</kind>
             <string>///SCORE
 
-
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_yellow, c_yellow, c_yellow, c_yellow, true);
 draw_text_ext_transformed_colour(5, 5, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
-if (global.score &gt; 9)
-{
-    draw_text_ext_transformed_colour(room_width/2, room_height/2, "GOOD ENOUGH", 10, 160, 2, 2, text_angle, c_red, c_red, c_red, c_red, 1);
-}
 </string>
           </argument>
         </arguments>

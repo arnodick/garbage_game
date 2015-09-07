@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-11</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Debug Draw
+            <string>///Debug Draw
 if (instance_exists(oMouse))
 {
-    draw_text_colour(10, 10, "Mouse Speed = " + string(oMouse.speed), c_red, c_red, c_red, c_red, 1);
+    draw_text_colour(room_width/2, 10, "Mouse Speed = " + string(oMouse.speed), c_blue, c_blue, c_blue, c_blue, 1);
 }
+draw_text_colour(room_width/2, 20, "Garbage count = " + string(global.garbage_amount), c_blue, c_blue, c_blue, c_blue, 1);
+draw_text_colour(room_width/2, 30, "Garbage chance = " + string(oGarbage.garbage_chance), c_blue, c_blue, c_blue, c_blue, 1);
+draw_text_colour(room_width/2, 40, "Game timer = " + string(oScene2.game_timer), c_blue, c_blue, c_blue, c_blue, 1);
 </string>
           </argument>
         </arguments>

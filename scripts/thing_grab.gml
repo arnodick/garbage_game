@@ -18,24 +18,24 @@ if (speed > 0)
     }
     image_angle -= hspeed*3;
 }
-if (x < room_buffer)
+if (x < global.room_buffer)
 {
-    x = room_buffer;
+    x = global.room_buffer;
 }
-if (y < room_buffer)
+if (y < global.room_buffer)
 {
-    y = room_buffer;
+    y = global.room_buffer;
 }
-if (x > room_width - room_buffer)
+if (x > room_width - global.room_buffer)
 {
-    x = room_width - room_buffer;
+    x = room_width - global.room_buffer;
 }
-if (y > room_height - room_buffer)
+if (y > room_height - global.room_buffer)
 {
-    y = room_height - room_buffer;
+    y = room_height - global.room_buffer;
 }
 
-if ( (x <= (oDoor.door_width - room_buffer)) and (y <= room_buffer) )
+if ( (x <= (oDoor.door_width - global.room_buffer)) and (y <= global.room_buffer) )
 {
     oScene2.scored = true;
     instance_deactivate_object(id);

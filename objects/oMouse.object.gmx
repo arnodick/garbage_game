@@ -29,7 +29,6 @@
 angle_init = 270;
 picked_up = false;
 sound = snd_squeak;
-room_buffer = 20;
 </string>
           </argument>
         </arguments>

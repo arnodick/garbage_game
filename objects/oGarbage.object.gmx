@@ -3,11 +3,48 @@
   <spriteName>sprGarbage</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-8</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oThing</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///INIT
+garbage_chance_init = 0.01;
+garbage_chance = garbage_chance_init;
+garbage_chance_speed = 0.2;
+
+direction = random_range(-53, 12);
+speed = random_range(8, 19);
+
+var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
+with (garbage)
+{
+    speed = random_range(8, 13);
+    direction = oGarbage.image_angle + random_range(210, 262);
+}
+global.garbage_amount++;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -26,14 +63,61 @@
           <argument>
             <kind>1</kind>
             <string>///GARBAGE
-if (random(1) &lt; 0.01)
+if (speed &gt; 14)
+{
+    garbage_chance = garbage_chance_speed;
+}
+else
+{
+    garbage_chance = garbage_chance_init;
+}
+
+if (random(1) &lt; garbage_chance)
 {
     var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
     with (garbage)
     {
-        speed = random_range(8, 13);//irandom(13);
-        direction = random_range(210, 262);
+        speed = random_range(8, 13);
+        direction = oGarbage.image_angle + random_range(210, 262);
     }
+    global.garbage_amount++;
+}
+
+///Controller
+if (picked_up == true)
+{
+    speed = (point_distance(mouse_x, mouse_y, x, y)/2);
+    move_towards_point(mouse_x, mouse_y, speed);
+    image_angle = 0;
+}
+if (speed &gt; 0)
+{
+    speed -= 1;
+    if (speed &lt; 0)
+    {
+        speed = 0;
+    }
+    else if (speed &gt; 18)
+    {
+        speed = 18;
+    }
+    image_angle -= hspeed*3;
+}
+if (x &lt; global.room_buffer)
+{
+    x = global.room_buffer;
+}
+if (y &lt; global.room_buffer)
+{
+    y = global.room_buffer;
+}
+if (x &gt; room_width - global.room_buffer)
+{
+    x = room_width - global.room_buffer;
+}
+if (y &gt; room_height - global.room_buffer)
+{
+    y = room_height - global.room_buffer;
 }
 </string>
           </argument>

@@ -11,6 +11,7 @@
     <sound>sound\snd_garbage3</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprThought</sprite>
     <sprite>sprites\sprDoor</sprite>
     <sprite>sprites\sprFloor</sprite>
@@ -20,7 +21,6 @@
     <sprite>sprites\sprTampon</sprite>
     <sprite>sprites\sprGarbage</sprite>
     <sprite>sprites\sprite8</sprite>
-    <sprite>sprites\sprHam</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -28,20 +28,23 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\thing_grab.gml</script>
+    <script>scripts\value_oscillate.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font</font>
   </fonts>
   <objects name="objects">
     <object>objects\oScreen</object>
+    <object>objects\oAsleep</object>
     <object>objects\oScene1</object>
     <object>objects\oScene2</object>
+    <object>objects\oZzz</object>
+    <object>objects\oWin</object>
     <object>objects\oThought</object>
     <object>objects\oHand</object>
     <object>objects\oThing</object>
     <object>objects\oMouse</object>
     <object>objects\oBottle</object>
-    <object>objects\oHam</object>
     <object>objects\oTampon</object>
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
@@ -49,6 +52,7 @@
     <object>objects\oDebug</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rAsleep</room>
     <room>rooms\rScene1</room>
     <room>rooms\rScene2</room>
     <room>rooms\rScene3</room>
