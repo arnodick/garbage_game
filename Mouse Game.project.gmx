@@ -40,6 +40,7 @@
     <object>objects\oScene2</object>
     <object>objects\oZzz</object>
     <object>objects\oWin</object>
+    <object>objects\oButton</object>
     <object>objects\oThought</object>
     <object>objects\oHand</object>
     <object>objects\oThing</object>
@@ -55,7 +56,6 @@
     <room>rooms\rAsleep</room>
     <room>rooms\rScene1</room>
     <room>rooms\rScene2</room>
-    <room>rooms\rScene3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
