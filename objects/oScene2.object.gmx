@@ -29,6 +29,8 @@
 randomize();
 instance_deactivate_region(0, 0, room_width, room_height, false, true);
 
+border_colour = c_yellow;
+
 text_angle = 5;
 
 global.score = 0;
@@ -86,6 +88,7 @@ if (game_timer &gt;= game_length)
     {
         instance_create(room_width/2, room_height/2, oWin);
         text_angle += irandom(20);
+        border_colour = c_green;
     }
 }
 
@@ -155,7 +158,7 @@ draw_background_stretched(background0, 0, 0, 160, 100);
             <kind>1</kind>
             <string>///SCORE
 
-draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_yellow, c_yellow, c_yellow, c_yellow, true);
+draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, border_colour, border_colour, border_colour, border_colour, true);
 draw_text_ext_transformed_colour(5, 5, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
 </string>
           </argument>
