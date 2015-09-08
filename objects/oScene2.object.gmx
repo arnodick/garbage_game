@@ -102,6 +102,11 @@ if (!instance_exists(oDebug))
         instance_create(0, 0, oDebug);
     }
 }
+
+if (keyboard_check_pressed(vk_space))
+{
+    game_length = room_speed;
+}
 </string>
           </argument>
         </arguments>

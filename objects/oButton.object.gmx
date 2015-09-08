@@ -27,8 +27,20 @@
             <kind>1</kind>
             <string>///INITS
 
+text_init = "GOOD ENOUGH";
+text = text_init;
+text_alt = "BACK TO BED";
+
 width = 100;
 height = 40;
+
+button_text_init = c_gray;
+button_colour_init = c_dkgray;
+
+button_text = button_text_init;
+button_colour = button_colour_init;
+
+c_dkergray = make_colour_hsv(0, 0, 30);
 </string>
           </argument>
         </arguments>
@@ -53,7 +65,19 @@ height = 40;
             <kind>1</kind>
             <string>///BUTTON PRESS
 
-if (mouse_check_button_pressed(mb_left))
+if (mouse_check_button(mb_left))
+{
+    if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
+    {
+        if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
+        {
+            button_text = c_dkgray;
+            button_colour = c_dkergray;
+            text = text_alt;
+        }
+    }
+}
+else if (mouse_check_button_released(mb_left))
 {
     if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
     {
@@ -62,6 +86,12 @@ if (mouse_check_button_pressed(mb_left))
             game_restart();
         }
     }
+}
+else
+{
+    button_text = button_text_init;
+    button_colour = button_colour_init;
+    text = text_init;
 }
 </string>
           </argument>
@@ -87,8 +117,11 @@ if (mouse_check_button_pressed(mb_left))
             <kind>1</kind>
             <string>///BUTTON DRAW
 
-draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, c_gray, c_dkgray, false);
-draw_text_ext_transformed_colour( x + (width/2), y + 5, "GOOD ENOUGH", 10, width/2, 2, 2, 0, c_red, c_red, c_red, c_red, 1);
+draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, button_colour, button_colour, false);
+draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, c_black, c_black, true);
+
+draw_text_ext_transformed_colour( x + (width/2) + 1, y + 6, text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
+draw_text_ext_transformed_colour( x + (width/2), y + 5, text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
 </string>
           </argument>
         </arguments>

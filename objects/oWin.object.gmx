@@ -26,7 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///INITS
-
+if (instance_exists(oHand))
+{
+    with (oHand)
+    {
+        instance_destroy();
+    }
+}
+window_set_cursor(cr_uparrow);
 instance_create(30, 50, oButton);
 </string>
           </argument>
