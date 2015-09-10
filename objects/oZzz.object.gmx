@@ -26,8 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-image_scale[0] = 2;
-image_scale[1] = 0.01;
+//image_scale[0] = 2;
+//image_scale[1] = 0.01;
+
+image_scale[0] = 0;
+image_scale[1] = 0;
+
+alpha[0] = 0;
+alpha[1] = 0;
 
 char[0] = "Z";
 char[1] = ".";
@@ -37,10 +43,11 @@ char_switch[1] = false;
 
 switch_value = 0;
 
-alpha[0] = 0.5;
-alpha[1] = 0.01;
-
 alarm[0] = 60;
+
+sound[0] = snd_snore1;
+sound[1] = snd_snore2;
+sound[2] = snd_snore3;
 </string>
           </argument>
         </arguments>
@@ -96,8 +103,21 @@ alarm[0] = 60;
             <string>///Controls
 move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2);
 
-value_oscillate(image_scale, 3, 1);
-value_oscillate(alpha, 0.8, 0.1);
+//value_oscillate(image_scale, 3, 1);
+//value_oscillate(alpha, 0.8, 0.1);
+
+image_scale[0]  += 0.01;
+image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
+
+//image_scale[1]  = 3;
+
+alpha[0]        += 0.02;
+alpha[1]        = ( abs((sin(alpha[0]))) );
+
+if ( !audio_is_playing(sound[0]) and !audio_is_playing(sound[1]) and !audio_is_playing(sound[2]))
+{
+    audio_play_sound(sound[irandom(2)], 1, false);
+}
 
 if (x &lt; 0)
 {
@@ -138,7 +158,7 @@ else if (y &gt; room_height)
           <argument>
             <kind>1</kind>
             <string>///ZZZ
-draw_text_ext_transformed_colour(x, y, "Z" + char[char_switch[0]] + char[char_switch[1]], 1, 160, image_scale[0], image_scale[0], 0, c_white, c_white, c_white, c_white, alpha[0]);
+draw_text_ext_transformed_colour(x, y, "Z" + char[char_switch[0]] + char[char_switch[1]], 1, 160, image_scale[1], image_scale[1], 0, c_white, c_white, c_white, c_white, alpha[1]);
 </string>
           </argument>
         </arguments>

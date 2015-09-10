@@ -29,6 +29,8 @@
 window_set_cursor(cr_none);
 draw_set_font(font);
 draw_set_halign(fa_center);
+
+clicked = false;
 </string>
           </argument>
         </arguments>

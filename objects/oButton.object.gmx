@@ -74,6 +74,10 @@ if (mouse_check_button(mb_left))
             button_text = c_dkgray;
             button_colour = c_dkergray;
             text = text_alt;
+            if (!audio_is_playing(snd_clickdown))
+            {
+                audio_play_sound(snd_clickdown, 1, false);
+            }
         }
     }
 }
@@ -83,6 +87,10 @@ else if (mouse_check_button_released(mb_left))
     {
         if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
         {
+            if (!audio_is_playing(snd_clickup))
+            {
+                audio_play_sound(snd_clickup, 1, false);
+            }
             game_restart();
         }
     }
@@ -120,8 +128,8 @@ else
 draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, button_colour, button_colour, false);
 draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, c_black, c_black, true);
 
-draw_text_ext_transformed_colour( x + (width/2) + 1, y + 6, text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
-draw_text_ext_transformed_colour( x + (width/2), y + 5, text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
+draw_text_ext_transformed_colour( x + (width/2) + 1, y + 4, text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
+draw_text_ext_transformed_colour( x + (width/2), y + 3, text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
 </string>
           </argument>
         </arguments>

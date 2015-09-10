@@ -34,6 +34,8 @@ text_angle[1] = 5;
 
 shake_timer = random_range(50, 111);
 
+audio_stop_all();
+
 sound[0] = snd_garbage1;
 sound[1] = snd_garbage2;
 sound[2] = snd_garbage3;
@@ -41,6 +43,8 @@ sound[2] = snd_garbage3;
 audio_play_sound(sound[irandom(2)], 1, false);
 
 alarm[0] = 3 * room_speed;
+
+clicked = false;
 </string>
           </argument>
         </arguments>
@@ -109,11 +113,20 @@ if (shake_timer &gt; 0)
 
 if (mouse_check_button_pressed(mb_left))
 {
-    with(all)
+    clicked = true;
+    audio_play_sound(snd_light2, 1, false);
+}
+
+if (clicked == true)
+{
+    if (!audio_is_playing(snd_light2))
     {
-        instance_destroy();
+        with(all)
+        {
+            instance_destroy();
+        }
+        room_goto(rScene2);
     }
-    room_goto(rScene2);
 }
 </string>
           </argument>
