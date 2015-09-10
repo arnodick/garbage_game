@@ -83,13 +83,13 @@ if (mouse_check_button_pressed(mb_left))
         }
     }
 }
-
 else if (mouse_check_button_released(mb_left))
 {
     if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
     {
         if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
         {
+            button_pressed = false;
             if (!audio_is_playing(snd_clickup))
             {
                 audio_play_sound(snd_clickup, 1, false);
@@ -98,18 +98,25 @@ else if (mouse_check_button_released(mb_left))
         }
     }
 }
+/*
 else
 {
     button_text = button_text_init;
     button_colour = button_colour_init;
     text = text_init;
 }
+*/
 
 if (button_pressed == true)
 {
     button_text = c_dkgray;
     button_colour = c_dkergray;
     text = text_alt;
+}
+else
+{
+    button_text = button_text_init;
+    button_colour = button_colour_init;
 }
 
 if (restarting == true)
@@ -143,11 +150,12 @@ if (restarting == true)
             <kind>1</kind>
             <string>///BUTTON DRAW
 
-draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, button_colour, button_colour, false);
+draw_roundrect_colour_ext(x, y, x + width, y + height + (button_pressed*3), 3, 3, button_colour, button_colour, false);
+draw_roundrect_colour_ext(x, y, x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
 draw_roundrect_colour_ext(x, y, x + width, y + height, 3, 3, c_black, c_black, true);
 
-draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + button_pressed +  4,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
-draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + button_pressed+ 3,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
+draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + (button_pressed*3) + 4,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
+draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + (button_pressed*3) + 3,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
 </string>
           </argument>
         </arguments>

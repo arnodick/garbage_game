@@ -62,7 +62,10 @@ alarm[0] = irandom_range(room_speed, room_speed*2.5);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_glassbreak, 2, false);
+            <string>///BREAK
+audio_play_sound(snd_glassbreak, 2, false);
+instance_create(x, y, oShard);
+instance_create(x, y, oShard);
 instance_destroy();
 </string>
           </argument>
@@ -89,6 +92,11 @@ instance_destroy();
             <string>///Controller
 thing_grab(angle_init, 1);
 image_angle -= hspeed*random_range(10, 30);
+
+if (picked_up == true)
+{
+    alarm[0] = room_speed*3;
+}
 </string>
           </argument>
         </arguments>

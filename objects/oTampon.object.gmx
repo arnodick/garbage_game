@@ -28,7 +28,7 @@
             <string>///Inits
 angle_init = 270;
 picked_up = false;
-sound[0] = snd_squeak;
+sound[0] = -1;
 </string>
           </argument>
         </arguments>

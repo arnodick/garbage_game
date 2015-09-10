@@ -21,9 +21,14 @@
     <sound>sound\snd_snore3</sound>
     <sound>sound\snd_light</sound>
     <sound>sound\snd_light2</sound>
+    <sound>sound\snd_lightpull</sound>
+    <sound>sound\snd_lightrelease</sound>
     <sound>sound\snd_clickdown</sound>
     <sound>sound\snd_clickup</sound>
     <sound>sound\snd_glassbreak</sound>
+    <sound>sound\snd_bag1</sound>
+    <sound>sound\snd_bag2</sound>
+    <sound>sound\snd_bag3</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite9</sprite>
@@ -33,6 +38,7 @@
     <sprite>sprites\sprHand</sprite>
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprBottle</sprite>
+    <sprite>sprites\sprShard</sprite>
     <sprite>sprites\sprCan</sprite>
     <sprite>sprites\sprTampon</sprite>
     <sprite>sprites\sprGarbage</sprite>
@@ -67,6 +73,7 @@
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
     <object>objects\oFloor</object>
+    <object>objects\oShard</object>
     <object>objects\oDebug</object>
   </objects>
   <rooms name="rooms">
