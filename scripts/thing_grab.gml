@@ -5,12 +5,13 @@ if (picked_up == true)
     move_towards_point(mouse_x, mouse_y, speed);
     image_angle = argument0;
 }
-if (speed > 0)
+
+if (speed > argument1)
 {
     speed -= 1;
-    if (speed < 0)
+    if (speed < argument1)
     {
-        speed = 0;
+        speed = argument1;
     }
     else if (speed > 18)
     {
@@ -18,6 +19,7 @@ if (speed > 0)
     }
     image_angle -= hspeed*3;
 }
+
 if (x < global.room_buffer)
 {
     x = global.room_buffer;

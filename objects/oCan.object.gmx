@@ -61,7 +61,7 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>///Controller
-thing_grab(angle_init);
+thing_grab(angle_init, 0);
 </string>
           </argument>
         </arguments>

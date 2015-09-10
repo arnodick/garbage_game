@@ -81,7 +81,7 @@ if (mouse_check_button_pressed(mb_left))
         with (instance_position(mouse_x, mouse_y, oThing) )
         {
             picked_up = true;
-            audio_play_sound(sound, 1, false);
+            //audio_play_sound(sound[0], 1, false);
         }
     }
 }
@@ -93,7 +93,7 @@ else if (mouse_check_button_released(mb_left))
         if (picked_up == true)
         {
             picked_up = false;
-            audio_play_sound(sound, 1, false);
+            audio_play_sound(sound[0], 1, false);
         }
     }
 }

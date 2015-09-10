@@ -28,7 +28,7 @@
             <string>///Inits
 angle_init = 270;
 picked_up = false;
-sound = snd_squeak;
+sound[0] = snd_squeak;
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,7 @@ sound = snd_squeak;
           <argument>
             <kind>1</kind>
             <string>///Controller
-thing_grab(angle_init - (hspeed*10));
+thing_grab(angle_init - (hspeed*10), 0);
 </string>
           </argument>
         </arguments>

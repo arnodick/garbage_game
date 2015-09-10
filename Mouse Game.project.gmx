@@ -23,6 +23,7 @@
     <sound>sound\snd_light2</sound>
     <sound>sound\snd_clickdown</sound>
     <sound>sound\snd_clickup</sound>
+    <sound>sound\snd_glassbreak</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite9</sprite>
@@ -51,10 +52,10 @@
   <objects name="objects">
     <object>objects\oScreen</object>
     <object>objects\oAsleep</object>
-    <object>objects\oScene1</object>
-    <object>objects\oScene2</object>
     <object>objects\oZzz</object>
+    <object>objects\oScene1</object>
     <object>objects\oThought</object>
+    <object>objects\oScene2</object>
     <object>objects\oWin</object>
     <object>objects\oButton</object>
     <object>objects\oHand</object>
