@@ -31,7 +31,7 @@ picked_up = false;
 sound = snd_squeak;
 
 direction = random_range(-53, 12);
-speed = random_range(8, 19);
+speed = random_range(0, 18);
 
 sound[0] = snd_bottle1;
 sound[1] = snd_bottle2;
@@ -39,7 +39,9 @@ sound[2] = snd_bottle3;
 
 audio_play_sound(sound[irandom(2)], 1, false);
 
-alarm[0] = irandom_range(room_speed, room_speed*2.5);
+bounce = 0;
+
+//alarm[0] = irandom_range(room_speed, room_speed*2.5);
 </string>
           </argument>
         </arguments>
@@ -94,12 +96,29 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Controller
-thing_grab(angle_init, 1);
+thing_grab(angle_init, 0);
 image_angle -= hspeed*random_range(10, 30);
 
 if (picked_up == true)
 {
     alarm[0] = room_speed*3;
+}
+if (speed &lt;= 0)
+{
+    bounce += 1;
+    direction = random_range(0, 359);
+    speed = random_range(1, 6);
+    if (random(bounce) &gt; 1)
+    {
+        audio_play_sound(snd_glassbreak, 2, false);
+        instance_create(x, y, oShard);
+        var shard = instance_create(x, y, oShard);
+        with (shard)
+        {
+            image_index = 1;
+        }
+        instance_destroy();
+    }
 }
 </string>
           </argument>

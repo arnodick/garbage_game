@@ -8,7 +8,7 @@ if (picked_up == true)
 
 if (speed > argument1)
 {
-    speed -= 1;
+    speed -= 0.8;
     if (speed < argument1)
     {
         speed = argument1;
