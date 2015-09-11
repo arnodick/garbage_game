@@ -38,6 +38,8 @@ sound[1] = snd_bottle2;
 sound[2] = snd_bottle3;
 
 audio_play_sound(sound[irandom(2)], 1, false);
+
+image_speed = 0;
 </string>
           </argument>
         </arguments>

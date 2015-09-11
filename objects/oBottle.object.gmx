@@ -65,7 +65,11 @@ alarm[0] = irandom_range(room_speed, room_speed*2.5);
             <string>///BREAK
 audio_play_sound(snd_glassbreak, 2, false);
 instance_create(x, y, oShard);
-instance_create(x, y, oShard);
+var shard = instance_create(x, y, oShard);
+with (shard)
+{
+    image_index = 1;
+}
 instance_destroy();
 </string>
           </argument>

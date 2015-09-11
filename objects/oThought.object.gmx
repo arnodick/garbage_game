@@ -129,7 +129,8 @@ if (released == true)
 
 //draw_sprite(sprite_index, 0, x, y);
 draw_sprite_ext( sprite_index, 0, x, y, 1, 1, image_angle, c_white, 1 );
-draw_line_width_colour(x, y, x - hspeed*3, y + 12 + (clicked*12), 2, c_gray, c_gray);
+//draw_line_width_colour(x, y, x - hspeed*3, y + 12 + (clicked*12), 2, c_gray, c_gray);
+draw_line_width_colour(x, y, x + lengthdir_x(12 + (clicked*9), 270 - hspeed*6), y + lengthdir_y(12 + (clicked*9), 270 - hspeed*6), 2, c_gray, c_gray);
 </string>
           </argument>
         </arguments>
