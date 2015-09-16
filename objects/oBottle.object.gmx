@@ -73,6 +73,22 @@ if (random(1) &lt; 0.5)
     {
         image_index = 1;
     }
+    with (oScene2)
+    {
+        bit = bit &lt;&lt; 1;
+        if (bit == 0)
+        {
+            bit = 1;
+        }
+        splats = splats | bit;
+        splat_coord[break_num, 0] = other.x - 32;
+        splat_coord[break_num, 1] = other.y - 32;
+        break_num++;
+        if (break_num &gt; 7)
+        {
+            break_num = 7;
+        }
+    }
     instance_destroy();
 }
 </string>
@@ -99,7 +115,7 @@ if (random(1) &lt; 0.5)
             <kind>1</kind>
             <string>///Controller
 thing_grab(angle_init, 0);
-image_angle -= hspeed*random_range(10, 30);
+image_angle -= hspeed*random_range(10, 20);
 
 if (picked_up == true)
 {

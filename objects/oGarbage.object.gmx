@@ -82,7 +82,8 @@ else
 
 if (random(1) &lt; garbage_chance)
 {
-    var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
+    var garbage = instance_create(x, y, oBottle);
+    //irandom_range(oMouse, oTampon)
     with (garbage)
     {
         speed = random_range(8, 13);

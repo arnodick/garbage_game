@@ -29,6 +29,7 @@
     <sound>sound\snd_bag1</sound>
     <sound>sound\snd_bag2</sound>
     <sound>sound\snd_bag3</sound>
+    <sound>sound\snd_buzzer</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite9</sprite>
@@ -46,6 +47,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\bck_splat</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

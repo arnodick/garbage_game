@@ -35,12 +35,33 @@ text_angle = 5;
 
 global.score = 0;
 global.garbage_amount = 0;
-global.room_buffer = 20;
+global.room_buffer = 16;
 garbage_total = 30;
 
 game_timer = 0;
-
 game_length = room_speed * 35;
+
+splats = $0;
+bit = $0;
+splat_coord[0, 0] = 0;
+splat_coord[1, 0] = 0;
+splat_coord[2, 0] = 0;
+splat_coord[3, 0] = 0;
+splat_coord[4, 0] = 0;
+splat_coord[5, 0] = 0;
+splat_coord[6, 0] = 0;
+splat_coord[7, 0] = 0;
+
+splat_coord[0, 1] = 0;
+splat_coord[1, 1] = 0;
+splat_coord[2, 1] = 0;
+splat_coord[3, 1] = 0;
+splat_coord[4, 1] = 0;
+splat_coord[5, 1] = 0;
+splat_coord[6, 1] = 0;
+splat_coord[7, 1] = 0;
+
+break_num = 0;
 </string>
           </argument>
         </arguments>
@@ -97,7 +118,6 @@ if (game_timer &lt; game_length)
     game_timer++;
 }
 
-
 if (!instance_exists(oDebug))
 {
     if (keyboard_check_pressed(vk_enter))
@@ -134,6 +154,14 @@ if (keyboard_check_pressed(vk_space))
             <kind>1</kind>
             <string>///Background
 draw_background_stretched(background0, 0, 0, 160, 100);
+//draw_background_ext(bck_splat, splat_x, splat_y, 1, 1, 0, c_white, splats[0]);
+for(var i = 0; i &lt; 8; i++)
+{
+    var bitz = $1;
+    bitz = bitz &lt;&lt; i;
+    draw_background_ext(bck_splat, splat_coord[i, 0], splat_coord[i, 1], 1, 1, 0, c_white, splats &amp; bitz);
+    //splat_coord[i, 0], splat_coord[i, 1]
+}
 </string>
           </argument>
         </arguments>

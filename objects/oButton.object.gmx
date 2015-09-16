@@ -69,6 +69,11 @@ restarting = false;
             <kind>1</kind>
             <string>///BUTTON PRESS
 
+if (y &gt; 50)
+{
+    y -= 1;
+}
+
 if (mouse_check_button_pressed(mb_left))
 {
     if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
