@@ -82,7 +82,7 @@ else
 
 if (random(1) &lt; garbage_chance)
 {
-    var garbage = instance_create(x, y, oBottle);
+    var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
     //irandom_range(oMouse, oTampon)
     with (garbage)
     {

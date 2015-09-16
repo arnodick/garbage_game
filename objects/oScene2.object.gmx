@@ -43,6 +43,16 @@ game_length = room_speed * 35;
 
 splats = $0;
 bit = $0;
+
+splat_coord[0] = 0;
+splat_coord[1] = 0;
+splat_coord[2] = 0;
+splat_coord[3] = 0;
+splat_coord[4] = 0;
+splat_coord[5] = 0;
+splat_coord[6] = 0;
+splat_coord[7] = 0;
+/*
 splat_coord[0, 0] = 0;
 splat_coord[1, 0] = 0;
 splat_coord[2, 0] = 0;
@@ -60,6 +70,9 @@ splat_coord[4, 1] = 0;
 splat_coord[5, 1] = 0;
 splat_coord[6, 1] = 0;
 splat_coord[7, 1] = 0;
+*/
+
+splat_test = $000A000B;
 
 break_num = 0;
 </string>
@@ -159,7 +172,7 @@ for(var i = 0; i &lt; 8; i++)
 {
     var bitz = $1;
     bitz = bitz &lt;&lt; i;
-    draw_background_ext(bck_splat, splat_coord[i, 0], splat_coord[i, 1], 1, 1, 0, c_white, splats &amp; bitz);
+    draw_background_ext(bck_splat, splat_coord[i] &amp; $000000ff, (splat_coord[i] &amp; $0000ff00) &gt;&gt; 8, 1, 1, 0, c_white, splats &amp; bitz);
     //splat_coord[i, 0], splat_coord[i, 1]
 }
 </string>

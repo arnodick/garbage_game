@@ -81,8 +81,9 @@ if (random(1) &lt; 0.5)
             bit = 1;
         }
         splats = splats | bit;
-        splat_coord[break_num, 0] = other.x - 32;
-        splat_coord[break_num, 1] = other.y - 32;
+        splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffffff00) |   (other.x - 32) );
+        splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffff00ff) | ( (other.y - 32) &lt;&lt; 8) );
+        //splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ff00ffff) | ( (irandom(255) &amp; $000000ff ) &lt;&lt; 16 ) );
         break_num++;
         if (break_num &gt; 7)
         {
