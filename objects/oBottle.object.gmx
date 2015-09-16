@@ -39,9 +39,7 @@ sound[2] = snd_bottle3;
 
 audio_play_sound(sound[irandom(2)], 1, false);
 
-bounce = 0;
-
-//alarm[0] = irandom_range(room_speed, room_speed*2.5);
+alarm[0] = random_range(room_speed, room_speed*1.5);
 </string>
           </argument>
         </arguments>
@@ -65,14 +63,18 @@ bounce = 0;
           <argument>
             <kind>1</kind>
             <string>///BREAK
-audio_play_sound(snd_glassbreak, 2, false);
-instance_create(x, y, oShard);
-var shard = instance_create(x, y, oShard);
-with (shard)
+
+if (random(1) &lt; 0.5)
 {
-    image_index = 1;
+    audio_play_sound(snd_glassbreak, 2, false);
+    instance_create(x, y, oShard);
+    var shard = instance_create(x, y, oShard);
+    with (shard)
+    {
+        image_index = 1;
+    }
+    instance_destroy();
 }
-instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -101,24 +103,7 @@ image_angle -= hspeed*random_range(10, 30);
 
 if (picked_up == true)
 {
-    alarm[0] = room_speed*3;
-}
-if (speed &lt;= 0)
-{
-    bounce += 1;
-    direction = random_range(0, 359);
-    speed = random_range(1, 6);
-    if (random(bounce) &gt; 1)
-    {
-        audio_play_sound(snd_glassbreak, 2, false);
-        instance_create(x, y, oShard);
-        var shard = instance_create(x, y, oShard);
-        with (shard)
-        {
-            image_index = 1;
-        }
-        instance_destroy();
-    }
+    alarm[0] = random_range(room_speed, room_speed*1.5);
 }
 </string>
           </argument>

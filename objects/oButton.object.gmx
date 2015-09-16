@@ -150,9 +150,9 @@ if (restarting == true)
             <kind>1</kind>
             <string>///BUTTON DRAW
 
-draw_roundrect_colour_ext(x, y, x + width, y + height + (button_pressed*3), 3, 3, button_colour, button_colour, false);
-draw_roundrect_colour_ext(x, y, x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
-draw_roundrect_colour_ext(x, y, x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
+draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (button_pressed*3), 3, 3, button_colour, button_colour, false);
+draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
+draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
 
 draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + (button_pressed*3) + 4,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
 draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + (button_pressed*3) + 3,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
