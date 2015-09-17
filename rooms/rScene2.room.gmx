@@ -58,6 +58,7 @@
     <instance objName="oScreen" x="0" y="0" name="inst_79C8014F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oScene2" x="0" y="0" name="inst_33A8CBB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGarbage" x="58" y="22" name="inst_A40A35DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRaccoon" x="-10" y="16" name="inst_6677C540" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

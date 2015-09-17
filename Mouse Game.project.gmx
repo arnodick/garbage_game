@@ -30,6 +30,7 @@
     <sound>sound\snd_bag2</sound>
     <sound>sound\snd_bag3</sound>
     <sound>sound\snd_buzzer</sound>
+    <sound>sound\snd_raccoon1</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite9</sprite>
@@ -74,12 +75,12 @@
     <object>objects\oMouse</object>
     <object>objects\oBottle</object>
     <object>objects\oCan</object>
-    <object>objects\oRaccoon</object>
     <object>objects\oTampon</object>
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
     <object>objects\oFloor</object>
     <object>objects\oShard</object>
+    <object>objects\oRaccoon</object>
     <object>objects\oDebug</object>
   </objects>
   <rooms name="rooms">
