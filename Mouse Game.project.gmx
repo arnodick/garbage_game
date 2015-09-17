@@ -44,6 +44,9 @@
     <sprite>sprites\sprTampon</sprite>
     <sprite>sprites\sprGarbage</sprite>
     <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\sprRaccoon</sprite>
+    <sprite>sprites\sprite14</sprite>
+    <sprite>sprites\sprRaccoon1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -71,6 +74,7 @@
     <object>objects\oMouse</object>
     <object>objects\oBottle</object>
     <object>objects\oCan</object>
+    <object>objects\oRaccoon</object>
     <object>objects\oTampon</object>
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
