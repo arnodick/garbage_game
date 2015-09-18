@@ -30,6 +30,9 @@ sound[0] = snd_bag1;
 sound[1] = snd_bag2;
 sound[2] = snd_bag3;
 
+picked_up = false;
+raccoon_picked_up = false;
+
 garbage_chance_init = 0.01;
 garbage_chance = garbage_chance_init;
 garbage_chance_speed = 0.2;
@@ -67,7 +70,7 @@ global.garbage_amount++;
           <argument>
             <kind>1</kind>
             <string>///GARBAGE
-if (speed &gt; 14)
+if ((speed &gt; 14) or (raccoon_picked_up == true))
 {
     garbage_chance = garbage_chance_speed;
     if ( !audio_is_playing(sound[0]) and !audio_is_playing(sound[1]) and !audio_is_playing(sound[2]) )
@@ -101,6 +104,19 @@ if (picked_up == true)
     speed = (point_distance(mouse_x, mouse_y, x, y)/2);
     move_towards_point(mouse_x, mouse_y, speed);
     image_angle = 0;
+}
+if (instance_exists(oRaccoon))
+{
+    if (raccoon_picked_up == true)
+    {
+        speed = (point_distance(oRaccoon.x, oRaccoon.y, x, y)/2);
+        move_towards_point(oRaccoon.x, oRaccoon.y, speed);
+        image_angle = 0;
+    }
+}
+else
+{
+    raccoon_picked_up = false;
 }
 if (speed &gt; 0)
 {
