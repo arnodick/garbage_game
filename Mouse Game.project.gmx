@@ -16,11 +16,13 @@
     <sound>sound\snd_bottle1</sound>
     <sound>sound\snd_bottle2</sound>
     <sound>sound\snd_bottle3</sound>
+    <sound>sound\snd_bottle4</sound>
+    <sound>sound\snd_bottle5</sound>
     <sound>sound\snd_snore1</sound>
     <sound>sound\snd_snore2</sound>
     <sound>sound\snd_snore3</sound>
-    <sound>sound\snd_light</sound>
-    <sound>sound\snd_light2</sound>
+    <sound>sound\snd_cigpack</sound>
+    <sound>sound\snd_cigpack1</sound>
     <sound>sound\snd_lightpull</sound>
     <sound>sound\snd_lightrelease</sound>
     <sound>sound\snd_clickdown</sound>
@@ -29,25 +31,29 @@
     <sound>sound\snd_bag1</sound>
     <sound>sound\snd_bag2</sound>
     <sound>sound\snd_bag3</sound>
-    <sound>sound\snd_buzzer</sound>
     <sound>sound\snd_raccoon1</sound>
+    <sound>sound\snd_buzzer</sound>
+    <sound>sound\snd_ow0</sound>
+    <sound>sound\snd_ow1</sound>
+    <sound>sound\snd_ow2</sound>
+    <sound>sound\snd_ow3</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprThought</sprite>
     <sprite>sprites\sprDoor</sprite>
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprHand</sprite>
+    <sprite>sprites\sprHand1</sprite>
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprBottle</sprite>
     <sprite>sprites\sprShard</sprite>
+    <sprite>sprites\sprCut</sprite>
     <sprite>sprites\sprCan</sprite>
     <sprite>sprites\sprTampon</sprite>
     <sprite>sprites\sprGarbage</sprite>
-    <sprite>sprites\sprite8</sprite>
-    <sprite>sprites\sprRaccoon</sprite>
-    <sprite>sprites\sprite14</sprite>
     <sprite>sprites\sprRaccoon1</sprite>
+    <sprite>sprites\sprBlood</sprite>
+    <sprite>sprites\sprCigpack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -62,6 +68,7 @@
     <font>fonts\font</font>
   </fonts>
   <objects name="objects">
+    <object>objects\oStart</object>
     <object>objects\oScreen</object>
     <object>objects\oAsleep</object>
     <object>objects\oZzz</object>
@@ -75,15 +82,19 @@
     <object>objects\oMouse</object>
     <object>objects\oBottle</object>
     <object>objects\oCan</object>
+    <object>objects\oCigpack</object>
     <object>objects\oTampon</object>
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
     <object>objects\oFloor</object>
     <object>objects\oShard</object>
+    <object>objects\oCut</object>
+    <object>objects\oBlood</object>
     <object>objects\oRaccoon</object>
     <object>objects\oDebug</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rStart</room>
     <room>rooms\rAsleep</room>
     <room>rooms\rScene1</room>
     <room>rooms\rScene2</room>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,6 +29,13 @@
 if (instance_exists(oHand))
 {
     with (oHand)
+    {
+        instance_destroy();
+    }
+}
+if (instance_exists(oCut))
+{
+    with (oCut)
     {
         instance_destroy();
     }

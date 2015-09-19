@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///INIT
+sound_amount = 2;
 sound[0] = snd_bag1;
 sound[1] = snd_bag2;
 sound[2] = snd_bag3;
@@ -75,7 +76,7 @@ if ((speed &gt; 14) or (raccoon_picked_up == true))
     garbage_chance = garbage_chance_speed;
     if ( !audio_is_playing(sound[0]) and !audio_is_playing(sound[1]) and !audio_is_playing(sound[2]) )
     {
-        audio_play_sound(sound[irandom(2)], 1, false);
+        audio_play_sound(sound[irandom(sound_amount)], 1, false);
     }
 }
 else

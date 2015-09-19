@@ -28,6 +28,8 @@
             <string>///Inits
 image_speed = 0;
 sprite_switch = true;
+
+sprite_index = choose(sprHand, sprHand1);
 </string>
           </argument>
         </arguments>
@@ -52,25 +54,27 @@ sprite_switch = true;
             <kind>1</kind>
             <string>///Controls
 
+
 move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2);
 //x = mouse_x;
 //y = mouse_y;
 
-if (x &lt; 0)
+if (x &lt; 1)
 {
-    x = 0;
+    x = 1;
 }
-else if (x &gt; room_width)
+else if (x &gt; (room_width - 1))
 {
-    x = room_width;
+    x = (room_width - 1);
+    keyboard_key_release(mb_left);
 }
-if (y &lt; 0)
+if (y &lt; 1)
 {
-    y = 0;
+    y = 1;
 }
-else if (y &gt; room_height)
+else if (y &gt; (room_height - 1))
 {
-    y = room_height;
+    y = (room_height - 1);
 }
 
 if (mouse_check_button_pressed(mb_left))
@@ -93,7 +97,14 @@ else if (mouse_check_button_released(mb_left))
         if (picked_up == true)
         {
             picked_up = false;
-            audio_play_sound(sound[0], 1, false);
+            if (sound_amount == 0)
+            {
+                audio_play_sound(sound[0], 1, false);
+            }
+            else
+            {
+                audio_play_sound(sound[irandom(sound_amount)], 1, false);
+            }
         }
     }
 }

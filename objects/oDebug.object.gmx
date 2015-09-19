@@ -67,6 +67,12 @@ draw_text_colour(room_width/2, 30, "Garbage chance = " + string(oGarbage.garbage
 draw_text_colour(room_width/2, 40, "Game timer = " + string(oScene2.game_timer), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 50, "Bit = " + string(oScene2.bit), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 60, "Inst = " + string(instance_number(oThing)), c_blue, c_blue, c_blue, c_blue, 1);
+draw_text_colour(room_width/2, 70, "Lvl = " + string(global.level_count), c_blue, c_blue, c_blue, c_blue, 1);
+if (instance_exists(oHand))
+{
+    draw_text_colour(room_width/2, 80, "X = " + string(oHand.x), c_blue, c_blue, c_blue, c_blue, 1);
+    draw_text_colour(room_width/2, 90, "Y = " + string(oHand.y), c_blue, c_blue, c_blue, c_blue, 1);
+}
 </string>
           </argument>
         </arguments>

@@ -29,12 +29,13 @@
 angle_init = 0;
 picked_up = false;
 
+sound_amount = 3;
 sound[0] = snd_can1;
 sound[1] = snd_can2;
 sound[2] = snd_can3;
 sound[3] = snd_can4;
 
-audio_play_sound(sound[irandom(3)], 1, false);
+audio_play_sound(sound[irandom(sound_amount)], 1, false);
 
 image_index = irandom(1);
 image_speed = 0;

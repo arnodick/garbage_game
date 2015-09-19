@@ -33,11 +33,14 @@ sound = snd_squeak;
 direction = random_range(-53, 12);
 speed = random_range(0, 18);
 
-sound[0] = snd_bottle1;
-sound[1] = snd_bottle2;
-sound[2] = snd_bottle3;
+sound_amount = 1;
+//sound[0] = snd_bottle1;
+//sound[1] = snd_bottle2;
+//sound[0] = snd_bottle3;
+sound[0] = snd_bottle4;
+sound[1] = snd_bottle5;
 
-audio_play_sound(sound[irandom(2)], 1, false);
+audio_play_sound(sound[irandom(sound_amount)], 1, false);
 
 alarm[0] = random_range(room_speed, room_speed*1.5);
 </string>

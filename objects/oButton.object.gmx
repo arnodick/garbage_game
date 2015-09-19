@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>-31</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -128,7 +128,13 @@ if (restarting == true)
 {
     if (!audio_is_playing(snd_clickup))
     {
-        game_restart();
+        global.level_count++;
+        with (all)
+        {
+            instance_destroy();
+            room_goto(rAsleep);
+        }
+        //game_restart();
     }
 }
 </string>
