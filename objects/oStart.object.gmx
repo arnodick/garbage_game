@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///LEVEL COUNT
 global.level_count = 0;
+global.score_total = 0;
 room_goto(rAsleep);
 </string>
           </argument>

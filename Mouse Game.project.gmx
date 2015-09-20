@@ -23,6 +23,7 @@
     <sound>sound\snd_snore3</sound>
     <sound>sound\snd_cigpack</sound>
     <sound>sound\snd_cigpack1</sound>
+    <sound>sound\snd_cig</sound>
     <sound>sound\snd_lightpull</sound>
     <sound>sound\snd_lightrelease</sound>
     <sound>sound\snd_clickdown</sound>
@@ -54,6 +55,7 @@
     <sprite>sprites\sprRaccoon1</sprite>
     <sprite>sprites\sprBlood</sprite>
     <sprite>sprites\sprCigpack</sprite>
+    <sprite>sprites\sprCig</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -75,6 +77,7 @@
     <object>objects\oScene1</object>
     <object>objects\oThought</object>
     <object>objects\oScene2</object>
+    <object>objects\oRaccoon_assault</object>
     <object>objects\oWin</object>
     <object>objects\oButton</object>
     <object>objects\oHand</object>
@@ -90,6 +93,7 @@
     <object>objects\oShard</object>
     <object>objects\oCut</object>
     <object>objects\oBlood</object>
+    <object>objects\oCig</object>
     <object>objects\oRaccoon</object>
     <object>objects\oDebug</object>
   </objects>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -56,6 +56,11 @@ splat_test = $000A000B;
 break_num = 0;
 
 global.raccoon_count = 0;
+
+if(global.level_count == 2)
+{
+    instance_create(0, 0, oRaccoon_assault)
+}
 </string>
           </argument>
         </arguments>
@@ -104,6 +109,7 @@ if (game_timer &gt;= game_length)
         instance_create(room_width/2, room_height/2, oWin);
         text_angle += irandom(20);
         border_colour = c_green;
+        global.score_total += global.score;
     }
 }
 
@@ -114,6 +120,8 @@ if (game_timer &lt; game_length)
 
 if (game_timer == raccoon_spawn)
 {
+    if (global.level_count &gt; 0)
+    {
     if (!instance_exists(oRaccoon))
     {
         var rac_x = 1, rac_y = 1;
@@ -125,6 +133,7 @@ if (game_timer == raccoon_spawn)
         }
         instance_create(rac_x, rac_y, oRaccoon);
         
+    }
     }
 }
 
@@ -195,8 +204,8 @@ for(var i = 0; i &lt; 8; i++)
           <argument>
             <kind>1</kind>
             <string>///SCORE
-draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, border_colour, border_colour, border_colour, border_colour, true);
 draw_text_ext_transformed_colour(5, 5, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
+draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, border_colour, border_colour, border_colour, border_colour, true);
 </string>
           </argument>
         </arguments>
