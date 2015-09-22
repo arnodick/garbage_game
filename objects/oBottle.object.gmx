@@ -67,7 +67,7 @@ alarm[0] = random_range(room_speed, room_speed*1.5);
             <kind>1</kind>
             <string>///BREAK
 
-if (random(1) &lt; 0.5)
+if (random(1) &lt; 0.65)
 {
     audio_play_sound(snd_glassbreak, 2, false);
     instance_create(x, y, oShard);

@@ -38,6 +38,9 @@
     <sound>sound\snd_ow1</sound>
     <sound>sound\snd_ow2</sound>
     <sound>sound\snd_ow3</sound>
+    <sound>sound\snd_bag</sound>
+    <sound>sound\snd_bagcrumple</sound>
+    <sound>sound\snd_bagcrumple2</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprThought</sprite>
@@ -56,6 +59,10 @@
     <sprite>sprites\sprBlood</sprite>
     <sprite>sprites\sprCigpack</sprite>
     <sprite>sprites\sprCig</sprite>
+    <sprite>sprites\sprBag</sprite>
+    <sprite>sprites\sdfg</sprite>
+    <sprite>sprites\sprite17</sprite>
+    <sprite>sprites\sprChip</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -86,6 +93,7 @@
     <object>objects\oBottle</object>
     <object>objects\oCan</object>
     <object>objects\oCigpack</object>
+    <object>objects\oBag</object>
     <object>objects\oTampon</object>
     <object>objects\oGarbage</object>
     <object>objects\oDoor</object>
@@ -94,6 +102,7 @@
     <object>objects\oCut</object>
     <object>objects\oBlood</object>
     <object>objects\oCig</object>
+    <object>objects\oChip</object>
     <object>objects\oRaccoon</object>
     <object>objects\oDebug</object>
   </objects>

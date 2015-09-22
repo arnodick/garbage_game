@@ -85,6 +85,11 @@ if (mouse_check_button_pressed(mb_left))
         with (instance_position(mouse_x, mouse_y, oThing) )
         {
             picked_up = true;
+            if (object_index == oBag)
+            {
+                audio_play_sound(choose(snd_bagcrumple, snd_bagcrumple2), 1, false);
+                image_index = 1;
+            }
             //audio_play_sound(sound[0], 1, false);
         }
     }
