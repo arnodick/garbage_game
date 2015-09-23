@@ -57,9 +57,9 @@ text_size[1] = 0.1;
 value_oscillate(text_angle, 45, -45);
 text_size[0]  += 0.1;
 text_size[1]  = ( abs((sin(text_size[0])))*5 ) + 1;
-if (random(1) &lt; 0.1)
+if (random(1) &lt; 0.05)
 {
-    instance_create(random(room_width), random(room_height), oRaccoon);
+    instance_create(choose(0, room_width), irandom(room_height), oRaccoon);
 }
 </string>
           </argument>
@@ -84,7 +84,8 @@ if (random(1) &lt; 0.1)
           <argument>
             <kind>1</kind>
             <string>///RACCOON STRIKE
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 10, "RACCOON#ASSAULT", 10, 160, text_size[1], text_size[1], text_angle[0], c_red, c_red, c_orange, c_orange, 1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 16, "RACCOON#ASSAULT", 10, 160, text_size[1] + 1, text_size[1] + 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 14, "RACCOON#ASSAULT", 10, 160, text_size[1], text_size[1], text_angle[0], c_red, c_red, c_orange, c_orange, 1);
 </string>
           </argument>
         </arguments>

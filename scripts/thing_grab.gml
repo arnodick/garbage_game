@@ -24,21 +24,25 @@ if (x < global.room_buffer)
 {
     x = global.room_buffer;
 }
-if (y < global.room_buffer)
+if ((y < global.room_buffer*2) and (x > oDoor.door_width))
 {
-    y = global.room_buffer;
+    y = global.room_buffer*2;
 }
 if (x > room_width - global.room_buffer)
 {
     x = room_width - global.room_buffer;
 }
+/*
 if (y > room_height - global.room_buffer)
 {
     y = room_height - global.room_buffer;
-}
+}*/
 
 if ( (x <= (oDoor.door_width - global.room_buffer)) and (y <= global.room_buffer) )
 {
-    oScene2.scored = true;
-    instance_deactivate_object(id);
+    if (global.level_count != 3)
+    {
+        oScene2.scored = true;
+        instance_deactivate_object(id);
+    }
 }

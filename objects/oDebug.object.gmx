@@ -68,11 +68,14 @@ draw_text_colour(room_width/2, 40, "Game timer = " + string(oScene2.game_timer),
 draw_text_colour(room_width/2, 50, "Bit = " + string(oScene2.bit), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 60, "Inst = " + string(instance_number(oThing)), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 70, "Lvl = " + string(global.level_count), c_blue, c_blue, c_blue, c_blue, 1);
+/*
 if (instance_exists(oHand))
 {
     draw_text_colour(room_width/2, 80, "X = " + string(oHand.x), c_blue, c_blue, c_blue, c_blue, 1);
     draw_text_colour(room_width/2, 90, "Y = " + string(oHand.y), c_blue, c_blue, c_blue, c_blue, 1);
 }
+*/
+draw_text_colour(room_width/2, 80, "Mouse X = " + string(window_view_mouse_get_x(0)), c_blue, c_blue, c_blue, c_blue, 1);
 </string>
           </argument>
         </arguments>

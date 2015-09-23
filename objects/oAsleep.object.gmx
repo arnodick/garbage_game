@@ -31,6 +31,14 @@ draw_set_font(font);
 draw_set_halign(fa_center);
 
 clicked = false;
+if(global.level_count == 2)
+{
+    var rac = instance_create(1, 1, oRaccoon);
+    with (rac)
+    {
+        image_alpha = 0.5;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -55,13 +63,35 @@ clicked = false;
             <kind>1</kind>
             <string>///Game controls
 
+if(global.level_count == 2)
+{
+    if (!instance_exists(oRaccoon))
+    {
+        var rac = instance_create(choose(1, room_width - 1), irandom(room_height), oRaccoon);
+        with (rac)
+        {
+            image_alpha = 0.5;
+            direction_init = (point_direction(x, y, room_width/2, room_height/2));
+        }
+    }
+    else if ((oRaccoon.x &lt; -1) or (oRaccoon.x &gt; room_width + 1))
+    {
+        with (oRaccoon)
+        {
+            instance_destroy();
+        }
+    }
+}
 if (mouse_check_button_released(mb_left))
 {
+    if (global.level_count != 4)
+    {
     with(all)
     {
         instance_destroy();
     }
     room_goto(rScene1);
+    }
 }
 </string>
           </argument>
@@ -91,6 +121,10 @@ draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_blue, c_blue, c_b
 if (global.level_count &gt; 0)
 {
     draw_text_colour(room_width/2, room_height/2, string(global.score_total), c_red, c_red, c_red, c_red, 1);
+}
+if (global.level_count == 4)
+{
+    draw_text_colour(room_width/2, room_height/2 + 10, "IT WAS ALL A DREAM", c_red, c_red, c_red, c_red, 1);   
 }
 </string>
           </argument>
