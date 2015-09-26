@@ -26,14 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-//var target = instance_find(oThing, irandom(instance_number(oThing)));
-
-angle_init = 0;
-picked_up = false;
-sound[0] = -1;
 image_speed = 0.1;
 speed = 4;
-if (instance_exists(oGarbage))
+counter = 0;
+audio_play_sound(snd_raccoon1, 1, false);
+global.raccoon_count++;
+
+if (instance_exists(oGarbage))  //don't think this is used anymore?
 {
     direction_init = point_direction(x, y, oGarbage.x, oGarbage.y);
 }
@@ -41,13 +40,8 @@ else
 {
     direction_init = 320;
 }
-//direction_init = random_range(315, 350);
-//direction_init = 180;
-counter = 0;
 
-audio_play_sound(snd_raccoon1, 1, false);
-
-global.raccoon_count++;
+// KILL RACCOON if game is on last level
 if (global.level_count == 3)
 {
     instance_destroy();
@@ -75,22 +69,20 @@ if (global.level_count == 3)
           <argument>
             <kind>1</kind>
             <string>///Controller
-//thing_grab(angle_init - (hspeed*10), 0);
-
-//direction = 180 + irandom_range(-50, 50);
-//direction = 180 + (cos(counter/5)*20);
 direction = direction_init + (cos(counter/5)*20);
 image_angle = direction;
+//to reverse sprite when going left
 if ((direction &gt; 90) and (direction &lt; 270))
 {
     image_yscale = -1;
 }
-counter++;
 
 if (position_meeting(x, y, oGarbage))
 {
     oGarbage.raccoon_picked_up = true;
 }
+
+counter++;
 </string>
           </argument>
         </arguments>

@@ -29,9 +29,6 @@
 grab_init(180);
 sound_init(snd_bag);
 
-image_speed = 0;
-
-
 if (random(1) &lt; 0.3)
 {
     has_chip = true;
@@ -100,7 +97,7 @@ if (created_chip == false)
     {
         if (speed &gt; 2)
         {
-            alarm[0] = 3;
+            alarm[0] = 6;
             created_chip = true;
         }
     }

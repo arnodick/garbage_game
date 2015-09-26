@@ -29,15 +29,15 @@
 
 sound_init(snd_bag1, snd_bag2, snd_bag3);
 
+direction = random_range(-53, 12);
+speed = random_range(8, 19);
+
 picked_up = false;
 raccoon_picked_up = false;
 
 garbage_chance_init = 0.01;
 garbage_chance = garbage_chance_init;
 garbage_chance_speed = 0.2;
-
-direction = random_range(-53, 12);
-speed = random_range(8, 19);
 
 var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
 with (garbage)

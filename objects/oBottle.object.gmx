@@ -71,17 +71,20 @@ if (random(1) &lt; 0.65)
     
     with (oScene2)
     {
-        var temp_splats = splats;
-        splats = splats &lt;&lt; 1;
-        splats = splats | temp_splats;
-        if (splats == 0)
+        var temp_splats = splats;   //save current state of splats
+        splats = splats &lt;&lt; 1;       //shift splats one to left
+        if (splats == 0)            //if no splats yet, make a splat
         {
             splats = 1;
         }
+        splats = splats | temp_splats;  //add current splats state to old state
+        
+        // clear splat coords and replace with bottle's coords
         splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffffff00) |   (other.x) );
         splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffff00ff) | ( (other.y) &lt;&lt; 8) );
         splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ff00ffff) | ( (choose($09, $fa, $1b, $5c, $9a)) &lt;&lt; 16 ) );
         
+        //if 8 splats, cycle back to first
         break_num++;
         if (break_num &gt; 7)
         {

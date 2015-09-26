@@ -29,10 +29,10 @@
 grab_init(0);
 sound_init(snd_bottle1, snd_bottle2, snd_bottle3);
 
-picked_up_timer = 0;
-
 direction = random_range(0, 359);
 speed = random_range(6, 12);
+
+picked_up_timer = 0;
 </string>
           </argument>
         </arguments>
