@@ -26,23 +26,22 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-
-global.score = 0;
+audio_stop_all();   //just to stop garbage noises from oAsleep
 
 text_angle[0] = -7;
 text_angle[1] = 5;
-
-shake_timer = random_range(50, 111);
-
-audio_stop_all();
+text[0] = "what was that noise?";
+text[1] = "not again...";
+text[2] = "this is hell";
+text[3] = "no more garbage... please";
 
 sound[0] = snd_garbage1;
 sound[1] = snd_garbage2;
 sound[2] = snd_garbage3;
-
 audio_play_sound(sound[irandom(2)], 1, false);
 
-alarm[0] = 3 * room_speed;
+shake_timer = random_range(50, 111);
+alarm[0] = 3 * room_speed;  // when this runs down, shake screen
 </string>
           </argument>
         </arguments>
@@ -67,10 +66,9 @@ alarm[0] = 3 * room_speed;
             <kind>1</kind>
             <string>/// SHAKE IT UP
 
-shake_timer = random_range(50, 111);
+shake_timer = random_range(50, 111);    //how long and strong shaking is
 audio_play_sound(sound[irandom(2)], 1, false);
-
-alarm[0] = (irandom_range(3, 6)) * room_speed;
+alarm[0] = (irandom_range(3, 6)) * room_speed;  //shake again in 3 - 6 secs
 </string>
           </argument>
         </arguments>
@@ -94,14 +92,8 @@ alarm[0] = (irandom_range(3, 6)) * room_speed;
           <argument>
             <kind>1</kind>
             <string>///Game controls
-/*
-if ( (text_angle &gt; 30) or (text_angle &lt; -30) )
-{
-    text_angle_direction = -text_angle_direction;
-}
-text_angle += text_angle_direction;
-*/
-value_oscillate(text_angle, 30, -30);
+
+value_oscillate(text_angle, 30, -30);   //make text wobble to and fro
 
 if (shake_timer &gt; 0)
 {
@@ -133,7 +125,7 @@ if (shake_timer &gt; 0)
             <string>///TEXT + BORDER
 
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_red, c_red, c_red, c_red, true);
-draw_text_ext_transformed_colour(room_width/2, room_height/2, "what was that noise?", 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
+draw_text_ext_transformed_colour(room_width/2, room_height/2, text[global.level_count], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
 </string>
           </argument>
         </arguments>

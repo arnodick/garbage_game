@@ -72,7 +72,7 @@ image_angle -= hspeed*random_range(10, 30);
 if (picked_up == true)
 {
     picked_up_timer++;
-    if (picked_up_timer &gt;= 15)
+    if (picked_up_timer &gt;= 10)
     {
         if (instance_exists(oHand))
         {

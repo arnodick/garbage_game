@@ -28,14 +28,14 @@
             <string>///Inits
 randomize();
 
-border_colour = c_yellow;
-
-text_angle = 5;
-
-global.score = 0;
+score = 0;  // init score to 0 for this round
 global.garbage_amount = 0;
 global.room_buffer = 16;
-//garbage_total = 30;
+global.raccoon_count = 0;
+global.garbage_fountain_timer = room_speed *10;
+
+border_colour = c_yellow;
+text_angle = 5; //score text's angle (rotates)
 
 game_timer = 0;
 if (global.level_count != 3)
@@ -44,27 +44,25 @@ if (global.level_count != 3)
 }
 else
 {
-    game_length = room_speed * 20;
+    game_length = room_speed * 100;
 }
 raccoon_spawn =     choose(room_speed * 7, room_speed * 15);
-raccoon_ass_spawn = choose(room_speed * 23);
+raccoon_ass_spawn = room_speed * 23;
 
 scored = false;
 
 splats = $0;
-bit = $0;
-
+bit = $0;   //each bit represents a splat. 
+break_num = 0;
 for (i = 0; i &lt; 8; i++)
 {
-    splat_coord[i] = 0;
+    splat_coord[i] = 0; // hex values
+                        // byte 1 = x
+                        // byte 2 = y
+                        // byte 3 = rotation
+                        // byte 4 unused
 }
 
-splat_test = $000A000B;
-
-break_num = 0;
-
-global.raccoon_count = 0;
-global.garbage_fountain_timer = room_speed *10;
 </string>
           </argument>
         </arguments>
@@ -95,7 +93,7 @@ if (scored == true)
 {
     if (!instance_exists(oWin))
     {
-        global.score++;
+        score++;
         text_angle = 0;
         with (oDoor)
         {
@@ -113,7 +111,7 @@ if (game_timer &gt;= game_length)
         instance_create(room_width/2, room_height/2, oWin);
         text_angle += irandom(20);
         border_colour = c_green;
-        global.score_total += global.score;
+        global.score_total += score;
     }
 }
 
@@ -126,8 +124,6 @@ if (game_timer == raccoon_spawn)
 {
     if (global.level_count &gt; 0)
     {
-    //if (global.level_count != 3)
-    //{
     if (!instance_exists(oRaccoon))
     {
         var rac_x = 1, rac_y = 1;
@@ -154,7 +150,7 @@ if (game_timer == raccoon_spawn)
 }
 if(global.level_count == 2)
 {
-    if (global.score &gt;= 25)
+    if (score &gt;= 25)
     {
     if (game_timer == raccoon_ass_spawn)
     {
@@ -203,13 +199,14 @@ instance_deactivate_region(-1, -1, room_width + 1, room_height + 1, false, true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Background
-draw_background_stretched(background0, 0, 0, 160, 100);
-//draw_background_ext(bck_splat, splat_x, splat_y, 1, 1, 0, c_white, splats[0]);
-for(var i = 0; i &lt; 8; i++)
+            <string>///BACKGROUND + SPLATS
+draw_background_stretched(background0, 0, 0, 160, 100); // just the bg
+
+// draw the splats
+for(var i = 0; i &lt; 8; i++)  //loop through 8 possible splats
 {
     var bitz = $1;
-    bitz = bitz &lt;&lt; i;
+    bitz = bitz &lt;&lt; i;   //also loop through the splat bit switches
     draw_background_ext(bck_splat, splat_coord[i] &amp; $000000ff, (splat_coord[i] &amp; $0000ff00) &gt;&gt; 8, 1, 1, (splat_coord[i] &amp; $00ff0000) &gt;&gt; 16, c_white, splats &amp; bitz);
 }
 </string>
@@ -234,8 +231,8 @@ for(var i = 0; i &lt; 8; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///SCORE
-draw_text_ext_transformed_colour(5, 5, string(global.score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
+            <string>///SCORE + BORDER
+draw_text_ext_transformed_colour(5, 5, string(score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, border_colour, border_colour, border_colour, border_colour, true);
 </string>
           </argument>

@@ -34,15 +34,11 @@ direction = random_range(-53, 12);
 speed = random_range(0, 18);
 
 sound_amount = 1;
-//sound[0] = snd_bottle1;
-//sound[1] = snd_bottle2;
-//sound[0] = snd_bottle3;
 sound[0] = snd_bottle4;
 sound[1] = snd_bottle5;
-
 audio_play_sound(sound[irandom(sound_amount)], 1, false);
 
-alarm[0] = random_range(room_speed, room_speed*1.5);
+alarm[0] = random_range(room_speed, room_speed*1.5);    //break timer
 </string>
           </argument>
         </arguments>
@@ -67,15 +63,18 @@ alarm[0] = random_range(room_speed, room_speed*1.5);
             <kind>1</kind>
             <string>///BREAK
 
+// 65% chance of breaking eahc time it is dropped
 if (random(1) &lt; 0.65)
 {
+    // if breaking, create shards, play sound
     audio_play_sound(snd_glassbreak, 2, false);
     instance_create(x, y, oShard);
     var shard = instance_create(x, y, oShard);
     with (shard)
     {
-        image_index = 1;
+        image_index = 1;    // second shard has different sprite
     }
+    
     with (oScene2)
     {
         bit = bit &lt;&lt; 1;
@@ -84,8 +83,8 @@ if (random(1) &lt; 0.65)
             bit = 1;
         }
         splats = splats | bit;
-        splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffffff00) |   (other.x /*- 32*/) );
-        splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffff00ff) | ( (other.y /*- 32*/) &lt;&lt; 8) );
+        splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffffff00) |   (other.x) );
+        splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ffff00ff) | ( (other.y) &lt;&lt; 8) );
         splat_coord[break_num] = ( (splat_coord[break_num] &amp; $ff00ffff) | ( (choose($09, $fa, $1b, $5c, $9a)) &lt;&lt; 16 ) );
         break_num++;
         if (break_num &gt; 7)
@@ -119,8 +118,9 @@ if (random(1) &lt; 0.65)
             <kind>1</kind>
             <string>///Controller
 thing_grab(angle_init, 0);
-image_angle -= hspeed*random_range(10, 20);
+image_angle -= hspeed*random_range(10, 20); // add some extra angle to this item
 
+// when picked up, reset break timer
 if (picked_up == true)
 {
     alarm[0] = random_range(room_speed, room_speed*1.5);

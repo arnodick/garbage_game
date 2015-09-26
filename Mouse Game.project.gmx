@@ -55,6 +55,7 @@
     <sprite>sprites\sprCan</sprite>
     <sprite>sprites\sprTampon</sprite>
     <sprite>sprites\sprGarbage</sprite>
+    <sprite>sprites\sprGarbageghost</sprite>
     <sprite>sprites\sprRaccoon1</sprite>
     <sprite>sprites\sprBlood</sprite>
     <sprite>sprites\sprCigpack</sprite>

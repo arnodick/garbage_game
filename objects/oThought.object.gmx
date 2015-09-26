@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-image_speed = 0.2;
-image_angle = 19;
 angle = 19;
+image_angle = 19;
+image_speed = 0.2;
 
 clicked = false;
 released = false;
@@ -55,34 +55,17 @@ released = false;
           <argument>
             <kind>1</kind>
             <string>///Controls
-move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2);
+move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2); //thought follows mouse
 
 angle -= 0.1;
-image_angle = (sin(angle))*50;
+image_angle = (sin(angle))*50;  //make thought angle oscillate
 
-if (x &lt; 0)
-{
-    x = 0;
-}
-else if (x &gt; room_width)
-{
-    x = room_width;
-}
-if (y &lt; 0)
-{
-    y = 0;
-}
-else if (y &gt; room_height)
-{
-    y = room_height;
-}
-
+//click + release to go t next scene
 if (mouse_check_button_pressed(mb_left))
 {
     clicked = true;
     audio_play_sound(snd_lightpull, 1, false);
 }
-
 if (clicked == true)
 {
     if (mouse_check_button_released(mb_left))
@@ -102,6 +85,24 @@ if (released == true)
         }
         room_goto(rScene2);
     }
+}
+
+// keep thougts in bounds!
+if (x &lt; 0)
+{
+    x = 0;
+}
+else if (x &gt; room_width)
+{
+    x = room_width;
+}
+if (y &lt; 0)
+{
+    y = 0;
+}
+else if (y &gt; room_height)
+{
+    y = room_height;
 }
 </string>
           </argument>
@@ -125,11 +126,9 @@ if (released == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Chain
+            <string>///Sprite + chain
 
-//draw_sprite(sprite_index, 0, x, y);
 draw_sprite_ext( sprite_index, 0, x, y, 1, 1, image_angle, c_white, 1 );
-//draw_line_width_colour(x, y, x - hspeed*3, y + 12 + (clicked*12), 2, c_gray, c_gray);
 draw_line_width_colour(x, y, x + lengthdir_x(12 + (clicked*9), 270 - hspeed*6), y + lengthdir_y(12 + (clicked*9), 270 - hspeed*6), 2, c_gray, c_gray);
 </string>
           </argument>

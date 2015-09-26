@@ -95,7 +95,7 @@ if (!audio_is_playing(snd_buzzer))
           <argument>
             <kind>1</kind>
             <string>///Win
-draw_text_ext_transformed_colour(x, y - 30, "You garbaged " + string(global.score) + " garbages!", 10, 140, 1, 1, 0, c_red, c_red, c_red, c_red, 1);
+draw_text_ext_transformed_colour(x, y - 30, "You garbaged " + string(score) + " garbages!", 10, 140, 1, 1, 0, c_red, c_red, c_red, c_red, 1);
 </string>
           </argument>
         </arguments>

@@ -30,8 +30,12 @@ window_set_cursor(cr_none);
 draw_set_font(font);
 draw_set_halign(fa_center);
 
-clicked = false;
-if(global.level_count == 2)
+// for garbage bag graphical effects
+width = 1;
+height = 1;
+angle = 1;
+
+if(global.level_count == 1)
 {
     var rac = instance_create(1, 1, oRaccoon);
     with (rac)
@@ -61,9 +65,16 @@ if(global.level_count == 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Game controls
+            <string>///SCENE CONTROLLER
 
-if(global.level_count == 2)
+// calculate stuff for garbage bag graphics
+width = 1 + (sin(angle));
+height = 1 + (cos(angle));
+angle += 0.1;
+image_angle = angle*16;
+
+// make RACCOON if this is the 3rd level
+if (global.level_count == 2)
 {
     if (!instance_exists(oRaccoon))
     {
@@ -74,6 +85,7 @@ if(global.level_count == 2)
             direction_init = (point_direction(x, y, room_width/2, room_height/2));
         }
     }
+    //destroy RACCOON if they go too far
     else if ((oRaccoon.x &lt; -1) or (oRaccoon.x &gt; room_width + 1))
     {
         with (oRaccoon)
@@ -82,8 +94,11 @@ if(global.level_count == 2)
         }
     }
 }
+
+// go to next scene after clicking
 if (mouse_check_button_released(mb_left))
 {
+    // unless it is the end of the game
     if (global.level_count != 4)
     {
     with(all)
@@ -115,15 +130,20 @@ if (mouse_check_button_released(mb_left))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DRAW BORDER
+            <string>///DRAW TEXT + BORDER
 
+//border (fuck the)
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_blue, c_blue, c_blue, c_blue, true);
-if (global.level_count &gt; 0)
+
+//draw ILLUSORY GARBAGE if last level
+if (global.level_count == 3)
+{
+    draw_sprite_ext(sprGarbageghost, 0, room_width/2, room_height/2, width, height, image_angle, c_red, 0.5 ); 
+}
+// show score, message at end of game
+else if (global.level_count == 4)
 {
     draw_text_colour(room_width/2, room_height/2, string(global.score_total), c_red, c_red, c_red, c_red, 1);
-}
-if (global.level_count == 4)
-{
     draw_text_colour(room_width/2, room_height/2 + 10, "IT WAS ALL A DREAM", c_red, c_red, c_red, c_red, 1);   
 }
 </string>

@@ -110,17 +110,29 @@ if (random(1) &lt; garbage_chance)
     }
     else if (global.garbage_fountain_timer &lt;= 0)
     {
-        var garbage = instance_create(x, y, oGarbage);
-        //irandom_range(oMouse, oTampon)
-        with (garbage)
+        if (instance_number(oGarbage) &lt; 160)
         {
-            speed = random_range(8, 13);
-            direction = oGarbage.image_angle + random_range(210, 262);
+            var garbage = instance_create(x, y, oGarbage);
+            //irandom_range(oMouse, oTampon)
+            with (garbage)
+            {
+                speed = random_range(8, 13);
+                direction = oGarbage.image_angle + random_range(210, 262);
+            }
+            global.garbage_amount++;
+            
+            speed = garbage.speed;
+            direction = -garbage.direction;
         }
-        global.garbage_amount++;
-        
-        speed = garbage.speed;
-        direction = -garbage.direction;
+        else
+        {
+            global.level_count++;
+            with (all)
+            {
+                instance_destroy();
+                room_goto(rAsleep);
+            }
+        }
     }
 }
 
