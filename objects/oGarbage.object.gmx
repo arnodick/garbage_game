@@ -47,7 +47,6 @@ with (garbage)
     speed = random_range(8, 13);
     direction = oGarbage.image_angle + random_range(210, 262);
 }
-global.garbage_amount++;
 </string>
           </argument>
         </arguments>
@@ -103,7 +102,6 @@ if (random(1) &lt; garbage_chance)
             speed = random_range(8, 13);
             direction = oGarbage.image_angle + random_range(210, 262);
         }
-        global.garbage_amount++;
         
         speed = garbage.speed;
         direction = -garbage.direction;
@@ -119,7 +117,6 @@ if (random(1) &lt; garbage_chance)
                 speed = random_range(8, 13);
                 direction = oGarbage.image_angle + random_range(210, 262);
             }
-            global.garbage_amount++;
             
             speed = garbage.speed;
             direction = -garbage.direction;

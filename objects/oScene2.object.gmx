@@ -28,14 +28,15 @@
             <string>///Inits
 randomize();
 
-score = 0;  // init score to 0 for this round
-global.garbage_amount = 0;
-global.room_buffer = 16;
-global.raccoon_count = 0;
-global.garbage_fountain_timer = room_speed *10;
-
 border_colour = c_yellow;
 text_angle = 5; //score text's angle (rotates)
+scored = false; //need this to do stuff like shake when scoring
+score = 0;  // init score to 0 for this round
+global.garbage_fountain_timer = room_speed *10;
+global.room_buffer = 16;    //how far from edge of screen garbages can go
+global.raccoon_count = 0;
+raccoon_spawn =     choose(room_speed * 7, room_speed * 15);
+raccoon_ass_spawn = room_speed * 23;
 
 game_timer = 0;
 if (global.level_count != 3)
@@ -46,11 +47,9 @@ else
 {
     game_length = room_speed * 100;
 }
-raccoon_spawn =     choose(room_speed * 7, room_speed * 15);
-raccoon_ass_spawn = room_speed * 23;
 
-scored = false;
 
+// splat code
 splats = $0;    //each bit represents a splat. if bit is on, that splat is drawn   
 break_num = 0;  //the # of splats that have occurred
 for (i = 0; i &lt; 8; i++) // init splat coords and rotations
@@ -61,7 +60,6 @@ for (i = 0; i &lt; 8; i++) // init splat coords and rotations
                         // byte 3 = rotation
                         // byte 4 unused
 }
-
 </string>
           </argument>
         </arguments>
