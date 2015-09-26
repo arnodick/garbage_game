@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///inits
+            <string>///Inits
 text_angle[0] = -7;
 text_angle[1] = 5;
 
@@ -53,10 +53,11 @@ text_size[1] = 0.1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///RACCOON STRIKE
-value_oscillate(text_angle, 45, -45);
+            <string>///RACCOON STRIKE CONTROLLER
+value_oscillate(text_angle, 45, -45);   //wobble text
 text_size[0]  += 0.1;
-text_size[1]  = ( abs((sin(text_size[0])))*5 ) + 1;
+text_size[1]  = ( abs((sin(text_size[0])))*5 ) + 1; //oscillate text size
+// make a shit load of RACCOON
 if (random(1) &lt; 0.05)
 {
     instance_create(choose(0, room_width), irandom(room_height), oRaccoon);
@@ -83,7 +84,7 @@ if (random(1) &lt; 0.05)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///RACCOON STRIKE
+            <string>///TEXT
 draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 14, "RACCOON#ASSAULT", 10, 160, text_size[1], text_size[1], text_angle[0], c_red, c_red, c_orange, c_orange, 1);
 </string>
           </argument>

@@ -26,10 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///INIT
-sound_amount = 2;
-sound[0] = snd_bag1;
-sound[1] = snd_bag2;
-sound[2] = snd_bag3;
+
+sound_init(snd_bag1, snd_bag2, snd_bag3);
 
 picked_up = false;
 raccoon_picked_up = false;

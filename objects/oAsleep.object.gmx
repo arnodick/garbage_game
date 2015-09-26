@@ -35,6 +35,7 @@ width = 1;
 height = 1;
 angle = 1;
 
+//on 2nd level, make a single dream raccoon
 if(global.level_count == 1)
 {
     var rac = instance_create(1, 1, oRaccoon);
@@ -73,7 +74,7 @@ height = 1 + (cos(angle));
 angle += 0.1;
 image_angle = angle*16;
 
-// make RACCOON if this is the 3rd level
+// make many RACCOON if this is the 3rd level
 if (global.level_count == 2)
 {
     if (!instance_exists(oRaccoon))
@@ -101,11 +102,11 @@ if (mouse_check_button_released(mb_left))
     // unless it is the end of the game
     if (global.level_count != 4)
     {
-    with(all)
-    {
-        instance_destroy();
-    }
-    room_goto(rScene1);
+        with(all)
+        {
+            instance_destroy();
+        }
+        room_goto(rScene1);
     }
 }
 </string>

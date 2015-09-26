@@ -123,7 +123,6 @@ if (shake_timer &gt; 0)
           <argument>
             <kind>1</kind>
             <string>///TEXT + BORDER
-
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_red, c_red, c_red, c_red, true);
 draw_text_ext_transformed_colour(room_width/2, room_height/2, text[global.level_count], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
 </string>

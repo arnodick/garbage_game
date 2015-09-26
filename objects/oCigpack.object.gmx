@@ -26,17 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///INITS
-
-angle_init = 180;
-picked_up = false;
-
-sound_amount = 0;
-sound[0] = snd_cigpack1;
-
-audio_play_sound(sound[0], 1, false);
-
-//image_index = irandom(1);
-image_speed = 0;
+grab_init(180);
+sound_init(snd_cigpack1);
 
 created_cig = false;
 if (random(1) &lt; 0.3)

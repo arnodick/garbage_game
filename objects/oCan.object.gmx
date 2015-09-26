@@ -26,19 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-angle_init = 0;
-picked_up = false;
-
-sound_amount = 3;
-sound[0] = snd_can1;
-sound[1] = snd_can2;
-sound[2] = snd_can3;
-sound[3] = snd_can4;
-
-audio_play_sound(sound[irandom(sound_amount)], 1, false);
+grab_init(0);
+sound_init(snd_can1, snd_can2, snd_can3, snd_can4);
 
 image_index = irandom(1);
-image_speed = 0;
 </string>
           </argument>
         </arguments>

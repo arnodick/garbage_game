@@ -26,16 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///INITS
+grab_init(180);
+sound_init(snd_bag);
 
-angle_init = 180;
-picked_up = false;
-
-sound_amount = 0;
-sound[0] = snd_bag;
-
-audio_play_sound(sound[0], 1, false);
-
-//image_index = irandom(1);
 image_speed = 0;
 
 
@@ -70,7 +63,7 @@ created_chip = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///MAKE CIG
+            <string>///MAKE CHIP
 instance_create(x, y, oChip);
 instance_create(x, y, oChip);
 instance_create(x, y, oChip);

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///LEVEL COUNT
+//these are initted only ONCE, so restart after level doesn't wipe them out
 global.level_count = 0;
 global.score_total = 0;
 room_goto(rAsleep);

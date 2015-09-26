@@ -26,17 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-angle_init = 0;
-picked_up = false;
-sound = snd_squeak;
+grab_init(0);
+sound_init(snd_bottle4, snd_bottle5);
 
 direction = random_range(-53, 12);
 speed = random_range(0, 18);
-
-sound_amount = 1;
-sound[0] = snd_bottle4;
-sound[1] = snd_bottle5;
-audio_play_sound(sound[irandom(sound_amount)], 1, false);
 
 alarm[0] = random_range(room_speed, room_speed*1.5);    //break timer
 </string>

@@ -69,11 +69,13 @@ restarting = false;
             <kind>1</kind>
             <string>///BUTTON PRESS
 
+//scroll up
 if (y &gt; 50)
 {
     y -= 1;
 }
 
+//if click on button, depress it
 if (mouse_check_button_pressed(mb_left))
 {
     if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
@@ -88,6 +90,7 @@ if (mouse_check_button_pressed(mb_left))
         }
     }
 }
+// if release on button, start new round
 else if (mouse_check_button_released(mb_left))
 {
     if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
@@ -103,14 +106,6 @@ else if (mouse_check_button_released(mb_left))
         }
     }
 }
-/*
-else
-{
-    button_text = button_text_init;
-    button_colour = button_colour_init;
-    text = text_init;
-}
-*/
 
 if (button_pressed == true)
 {
@@ -124,6 +119,7 @@ else
     button_colour = button_colour_init;
 }
 
+//if button released, when sound is over, new round
 if (restarting == true)
 {
     if (!audio_is_playing(snd_clickup))
@@ -134,7 +130,6 @@ if (restarting == true)
             instance_destroy();
             room_goto(rAsleep);
         }
-        //game_restart();
     }
 }
 </string>

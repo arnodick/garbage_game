@@ -26,11 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-angle_init = irandom(359);
-picked_up = false;
-sound_amount = 0;
-sound[0] = -1;
-image_speed = 0;
+grab_init(irandom(359));
+sound_init(-1);
+
 speed = 6 + irandom_range(-3, 3);
 direction = 270 + irandom_range(-50, 50);
 </string>

@@ -26,10 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Inits
-angle_init = 270;
-picked_up = false;
-sound_amount = 0;
-sound[0] = -1;
+grab_init(270);
+sound_init(-1);
 </string>
           </argument>
         </arguments>

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///INITS
+//round over = no grabbing
 if (instance_exists(oHand))
 {
     with (oHand)
@@ -33,6 +34,7 @@ if (instance_exists(oHand))
         instance_destroy();
     }
 }
+// if cut exists it, destroy it too, so no floating cut
 if (instance_exists(oCut))
 {
     with (oCut)
@@ -64,7 +66,7 @@ window_set_cursor(cr_uparrow);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///BUTTON
+            <string>///MAKE BUTTON
 if (!audio_is_playing(snd_buzzer))
 {
     if (!instance_exists(oButton))
@@ -94,7 +96,7 @@ if (!audio_is_playing(snd_buzzer))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Win
+            <string>///Score text
 draw_text_ext_transformed_colour(x, y - 30, "You garbaged " + string(score) + " garbages!", 10, 140, 1, 1, 0, c_red, c_red, c_red, c_red, 1);
 </string>
           </argument>

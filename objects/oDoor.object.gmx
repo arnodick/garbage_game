@@ -27,16 +27,12 @@
             <kind>1</kind>
             <string>///INITS
 
-sound[0] = snd_garbage1;
-sound[1] = snd_garbage2;
-sound[2] = snd_garbage3;
+sound_init(snd_garbage1, snd_garbage2, snd_garbage3);
 
 door_width = 67;
 door_height = 48;
 
 shake_timer = random_range(50, 111);
-
-audio_play_sound(sound[irandom(2)], 1, false);
 </string>
           </argument>
         </arguments>
