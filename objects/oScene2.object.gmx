@@ -51,10 +51,9 @@ raccoon_ass_spawn = room_speed * 23;
 
 scored = false;
 
-splats = $0;
-bit = $0;   //each bit represents a splat. 
-break_num = 0;
-for (i = 0; i &lt; 8; i++)
+splats = $0;    //each bit represents a splat. if bit is on, that splat is drawn   
+break_num = 0;  //the # of splats that have occurred
+for (i = 0; i &lt; 8; i++) // init splat coords and rotations
 {
     splat_coord[i] = 0; // hex values
                         // byte 1 = x
