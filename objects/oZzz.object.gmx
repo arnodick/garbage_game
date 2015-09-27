@@ -107,10 +107,20 @@ image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
 alpha[0]        += 0.02;
 alpha[1]        = ( abs((sin(alpha[0]))) );
 
-// play random snore
-if ( !audio_is_playing(sound[0]) and !audio_is_playing(sound[1]) and !audio_is_playing(sound[2]))
+if (global.level_count != 3)
 {
-    audio_play_sound(sound[irandom(2)], 1, false);
+    // play random snore
+    if ( !audio_is_playing(sound[0]) and !audio_is_playing(sound[1]) and !audio_is_playing(sound[2]))
+    {
+        audio_play_sound(sound[irandom(2)], 1, false);
+    }
+}
+else
+{
+    if (!audio_is_playing(snd_bweow))
+    {
+        audio_play_sound(snd_bweow, 1, true);
+    }
 }
 
 // keep ZZZ in bounds!

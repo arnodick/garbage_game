@@ -41,6 +41,7 @@
     <sound>sound\snd_bag</sound>
     <sound>sound\snd_bagcrumple</sound>
     <sound>sound\snd_bagcrumple2</sound>
+    <sound>sound\snd_bweow</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprThought</sprite>
