@@ -41,10 +41,41 @@ char_switch[1] = false;
 switch_value = 0;
 
 alarm[0] = 60;
+if (global.level_count == 4)
+{
+    alarm[1] = 3*room_speed;
+    shake_timer = 0;
+}
 
 sound[0] = snd_snore1;
 sound[1] = snd_snore2;
 sound[2] = snd_snore3;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///SHAKEY SHAKEY
+shake_timer = random_range(50, 111);    //how long and strong shaking is
+audio_play_sound(choose(snd_garbage1, snd_garbage2, snd_garbage3, snd_raccoon1), 1, false);
+alarm[1] = (irandom_range(3, 6)) * room_speed;  //shake again in 3 - 6 secs
 </string>
           </argument>
         </arguments>
@@ -120,6 +151,15 @@ else
     if (!audio_is_playing(snd_bweow))
     {
         audio_play_sound(snd_bweow, 1, true);
+    }
+}
+
+if (global.level_count == 4)
+{
+    if (shake_timer &gt; 0)
+    {
+        shake_timer -= 5;
+        oScreen.shake = random_range(-(shake_timer/10), (shake_timer/10));
     }
 }
 
