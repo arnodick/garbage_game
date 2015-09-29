@@ -30,6 +30,11 @@ window_set_cursor(cr_none);
 draw_set_font(font);
 draw_set_halign(fa_center);
 
+if (global.level_count == 4)
+{
+    draw_set_font(font_big);
+}
+
 // for garbage bag graphical effects
 width = 1;
 height = 1;
@@ -44,6 +49,8 @@ if(global.level_count == 1)
         image_alpha = 0.5;
     }
 }
+
+win_string = "you got about " + string( ((global.score_total div 10) * 10) + choose(-5, 0, 5) ) + " garbages i think";
 </string>
           </argument>
         </arguments>
@@ -144,8 +151,9 @@ if (global.level_count == 3)
 // show score, message at end of game
 else if (global.level_count == 4)
 {
-    draw_text_colour(room_width/2, room_height/2, string(global.score_total), c_red, c_red, c_red, c_red, 1);
-    draw_text_colour(room_width/2, room_height/2 + 10, "IT WAS ALL A DREAM", c_red, c_red, c_red, c_red, 1);   
+    draw_text_ext_colour(room_width/2, room_height/2, win_string, 10, room_width, c_red, c_red, c_red, c_red, 1);
+    //draw_text_colour    (room_width/2, room_height/2, "you got about " + string((global.score_total div 10) * 10) + " garbages i think", c_red, c_red, c_red, c_red, 1);
+    //draw_text_colour(room_width/2, room_height/2 + 10, "IT WAS ALL A DREAM", c_red, c_red, c_red, c_red, 1);   
 }
 </string>
           </argument>

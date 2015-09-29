@@ -124,7 +124,8 @@ if (random(1) &lt; garbage_chance)
             with (all)
             {
                 instance_destroy();
-                room_goto(rAsleep);
+                room_goto(rPause);
+                //room_goto(rAsleep);
             }
         }
     }

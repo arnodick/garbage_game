@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-11</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,22 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DEBUG CONTROLS
-if (keyboard_check_pressed(vk_up))
-{
-    oScene2.bit = oScene2.bit &lt;&lt; 1;
-    if (oScene2.bit == 0)
-    {
-        oScene2.bit = 1;
-    }
-    oScene2.splats = oScene2.splats | oScene2.bit;
-}
+            <string>///inits
+alarm[0] = room_speed*2.5;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="73">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,27 +49,8 @@ if (keyboard_check_pressed(vk_up))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Debug Draw
-if (instance_exists(oMouse))
-{
-    draw_text_colour(room_width/2, 10, "Mouse Speed = " + string(oMouse.speed), c_blue, c_blue, c_blue, c_blue, 1);
-}
-//draw_text_colour(room_width/2, 20, "Garbage count = " + string(global.garbage_amount), c_blue, c_blue, c_blue, c_blue, 1);
-draw_text_colour(room_width/2, 30, "Garbage chance = " + string(oGarbage.garbage_chance), c_blue, c_blue, c_blue, c_blue, 1);
-draw_text_colour(room_width/2, 40, "Game timer = " + string(oScene2.game_timer), c_blue, c_blue, c_blue, c_blue, 1);
-//draw_text_colour(room_width/2, 50, "Bit = " + string(oScene2.bit), c_blue, c_blue, c_blue, c_blue, 1);
-draw_text_colour(room_width/2, 60, "Inst = " + string(instance_count), c_blue, c_blue, c_blue, c_blue, 1);
-//draw_text_colour(room_width/2, 60, "Inst = " + string(instance_number(oThing)), c_blue, c_blue, c_blue, c_blue, 1);
-draw_text_colour(room_width/2, 70, "Lvl = " + string(global.level_count), c_blue, c_blue, c_blue, c_blue, 1);
-/*
-if (instance_exists(oHand))
-{
-    draw_text_colour(room_width/2, 80, "X = " + string(oHand.x), c_blue, c_blue, c_blue, c_blue, 1);
-    draw_text_colour(room_width/2, 90, "Y = " + string(oHand.y), c_blue, c_blue, c_blue, c_blue, 1);
-}
-*/
-draw_text_colour(room_width/2, 80, "Mouse X = " + string(window_view_mouse_get_x(0)), c_blue, c_blue, c_blue, c_blue, 1);
-draw_text_colour(room_width/2, 90, "Score = " + string(global.score_total), c_blue, c_blue, c_blue, c_blue, 1);
+            <string>///Ending
+room_goto(rAsleep);
 </string>
           </argument>
         </arguments>

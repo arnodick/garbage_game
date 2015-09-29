@@ -79,6 +79,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\font</font>
+    <font>fonts\font_big</font>
   </fonts>
   <objects name="objects">
     <object>objects\oStart</object>
@@ -109,12 +110,14 @@
     <object>objects\oChip</object>
     <object>objects\oRaccoon</object>
     <object>objects\oDebug</object>
+    <object>objects\oPause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rStart</room>
     <room>rooms\rAsleep</room>
     <room>rooms\rScene1</room>
     <room>rooms\rScene2</room>
+    <room>rooms\rPause</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
