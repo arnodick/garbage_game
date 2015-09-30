@@ -65,6 +65,7 @@ if (instance_exists(oMouse))
 //draw_text_colour(room_width/2, 20, "Garbage count = " + string(global.garbage_amount), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 30, "Garbage chance = " + string(oGarbage.garbage_chance), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 40, "Game timer = " + string(oScene2.game_timer), c_blue, c_blue, c_blue, c_blue, 1);
+draw_text_colour(room_width/2, 50, "Game secs = " + string(oScene2.game_timer_secs), c_blue, c_blue, c_blue, c_blue, 1);
 //draw_text_colour(room_width/2, 50, "Bit = " + string(oScene2.bit), c_blue, c_blue, c_blue, c_blue, 1);
 draw_text_colour(room_width/2, 60, "Inst = " + string(instance_count), c_blue, c_blue, c_blue, c_blue, 1);
 //draw_text_colour(room_width/2, 60, "Inst = " + string(instance_number(oThing)), c_blue, c_blue, c_blue, c_blue, 1);

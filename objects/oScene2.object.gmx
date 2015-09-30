@@ -33,6 +33,7 @@ text_angle = 5; //score text's angle (rotates)
 scored = false; //need this to do stuff like shake when scoring
 score = 0;  // init score to 0 for this round
 game_timer = 0;
+game_timer_secs = 0;
 shake_timer = 0;
 raccoon_spawn =     choose(room_speed * 7, room_speed * 15);    // when 1st raccoon spawns
 raccoon_ass_spawn = room_speed * 23;    // when racc ass CAN happen (if score &gt;= 25)
@@ -155,7 +156,7 @@ if(global.level_count == 3)
 }
 
 //end round when timer is up
-if (game_timer &gt;= game_length)
+if ( (game_timer &gt;= game_length) or ( (global.plus_mode == true) and (global.level_count != 3) and ((game_timer_secs) &gt; score) and (game_timer_secs &gt; 3) ) )
 {
     if !(instance_exists(oWin))
     {
@@ -170,6 +171,7 @@ if (game_timer &gt;= game_length)
 if (game_timer &lt; game_length)
 {
     game_timer++;
+    game_timer_secs = game_timer div room_speed;
 }
 
 
@@ -180,12 +182,11 @@ if (!instance_exists(oDebug))
         instance_create(0, 0, oDebug);
     }
 }
-
-
 if (keyboard_check_pressed(vk_space))
 {
     game_length = room_speed;
 }
+
 instance_deactivate_region(-1, -1, room_width + 1, room_height + 1, false, true);
 </string>
           </argument>
@@ -218,7 +219,9 @@ for(var i = 0; i &lt; 8; i++)  //loop through 8 possible splats
     var bitz = $1;
     bitz = bitz &lt;&lt; i;   //also loop through the splat bit switches
     draw_background_ext(bck_splat, splat_coord[i] &amp; $000000ff, (splat_coord[i] &amp; $0000ff00) &gt;&gt; 8, 1, 1, (splat_coord[i] &amp; $00ff0000) &gt;&gt; 16, c_white, splats &amp; bitz/*draw only splats that have bit turned on*/);
+
 }
+draw_text_colour(room_width-10, 10, string(oScene2.game_timer_secs), c_red, c_red, c_red, c_red, 1);
 </string>
           </argument>
         </arguments>

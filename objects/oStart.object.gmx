@@ -29,6 +29,7 @@
 //these are initted only ONCE, so restart after level doesn't wipe them out
 global.level_count = 0;
 global.score_total = 0;
+global.plus_mode = false;
 room_goto(rAsleep);
 </string>
           </argument>

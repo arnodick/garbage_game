@@ -115,6 +115,20 @@ if (mouse_check_button_released(mb_left))
         }
         room_goto(rScene1);
     }
+    else
+    {
+        global.plus_mode = true;
+        score = 0;
+        global.level_count = 0;
+        global.score_total = 0;
+        draw_set_font(font);
+        
+        with(all)
+        {
+            instance_destroy();
+        }
+        room_goto(rScene1);
+    }
 }
 </string>
           </argument>

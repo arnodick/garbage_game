@@ -32,6 +32,9 @@ image_speed = 0.2;
 
 clicked = false;
 released = false;
+
+chain_x = x + lengthdir_x(12 + (clicked*9), 270 - hspeed*6);
+chain_y = y + lengthdir_y(12 + (clicked*9), 270 - hspeed*6);
 </string>
           </argument>
         </arguments>
@@ -56,6 +59,9 @@ released = false;
             <kind>1</kind>
             <string>///Controls
 move_towards_point(mouse_x, mouse_y, point_distance(mouse_x, mouse_y, x, y)/2); //thought follows mouse
+
+chain_x = x + lengthdir_x(12 + (clicked*9), 270 - hspeed*6);
+chain_y = y + lengthdir_y(12 + (clicked*9), 270 - hspeed*6);
 
 angle -= 0.1;
 image_angle = (sin(angle))*50;  //make thought angle oscillate
@@ -130,6 +136,14 @@ else if (y &gt; room_height)
 
 draw_sprite_ext( sprite_index, 0, x, y, 1, 1, image_angle, c_white, 1 );
 draw_line_width_colour(x, y, x + lengthdir_x(12 + (clicked*9), 270 - hspeed*6), y + lengthdir_y(12 + (clicked*9), 270 - hspeed*6), 2, c_gray, c_gray);
+
+if (global.plus_mode == true)
+{
+    draw_set_halign(fa_left);
+    draw_text_ext_transformed_colour(x, y,"PLUSMODE", 10, 160, 1, 1, point_direction(x, y, chain_x, chain_y), c_black, c_black, c_black, c_black, 1);
+    draw_text_ext_transformed_colour(x, y,"PLUSMODE", 10, 160, 1, 1, point_direction(x, y, chain_x, chain_y), c_yellow, c_yellow, c_orange, c_orange, 1);
+    draw_set_halign(fa_center);
+}
 </string>
           </argument>
         </arguments>
