@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>///INITS
 
-text_init = "GOOD ENOUGH";
+text_init = "AGAIN?";
 text = text_init;
-text_alt = "BACK TO BED";
+text_alt = "ugh why";
 
 width = 100;
 height = 40;
@@ -45,6 +45,8 @@ button_pressed = false;
 c_dkergray = make_colour_hsv(0, 0, 30);
 
 restarting = false;
+window_set_cursor(cr_uparrow);
+alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -70,9 +72,9 @@ restarting = false;
             <string>///BUTTON PRESS
 
 //scroll up
-if (y &gt; 50)
+if (alpha &lt; 1)
 {
-    y -= 1;
+    alpha += 0.01;
 }
 
 //if click on button, depress it
@@ -124,12 +126,17 @@ if (restarting == true)
 {
     if (!audio_is_playing(snd_clickup))
     {
-        global.level_count++;
-        with (all)
+        global.plus_mode = true;
+        global.level_count = 0;
+        global.score_total = 0;
+        score = 0;
+        draw_set_font(font);
+        
+        with(all)
         {
             instance_destroy();
-            room_goto(rAsleep);
         }
+        room_goto(rScene1);
     }
 }
 </string>
@@ -155,12 +162,17 @@ if (restarting == true)
           <argument>
             <kind>1</kind>
             <string>///BUTTON DRAW
+
+draw_set_alpha(alpha);
 draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (button_pressed*3), 3, 3, button_colour, button_colour, false);
 draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
 draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (button_pressed*3), 3, 3, c_black, c_black, true);
+draw_set_alpha(1);
 
-draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + (button_pressed*3) + 4,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
-draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + (button_pressed*3) + 3,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, 1);
+draw_set_font(font);
+draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + (button_pressed*3) + 4,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, alpha);
+draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + (button_pressed*3) + 3,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, alpha);
+draw_set_font(font_big);
 </string>
           </argument>
         </arguments>
