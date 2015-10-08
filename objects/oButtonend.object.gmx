@@ -45,7 +45,7 @@ button_pressed = false;
 c_dkergray = make_colour_hsv(0, 0, 30);
 
 restarting = false;
-window_set_cursor(cr_uparrow);
+
 alpha = 0;
 </string>
           </argument>
@@ -78,6 +78,9 @@ if (alpha &lt; 1)
 }
 
 //if click on button, depress it
+else
+{
+    window_set_cursor(cr_uparrow);
 if (mouse_check_button_pressed(mb_left))
 {
     if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
@@ -107,6 +110,7 @@ else if (mouse_check_button_released(mb_left))
             restarting = true;
         }
     }
+}
 }
 
 if (button_pressed == true)
@@ -170,8 +174,8 @@ draw_roundrect_colour_ext(x, y + (button_pressed*3), x + width, y + height + (bu
 draw_set_alpha(1);
 
 draw_set_font(font);
-draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + (button_pressed*3) + 4,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, alpha);
-draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + (button_pressed*3) + 3,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, alpha);
+draw_text_ext_transformed_colour( x + (width/2) + button_pressed + 1,   y + (button_pressed*3) + 11,    text, 10, width/2, 2, 2, 0, c_black, c_black, c_black, c_black, alpha);
+draw_text_ext_transformed_colour( x + (width/2) + button_pressed,       y + (button_pressed*3) + 10,      text, 10, width/2, 2, 2, 0, button_text, button_text, button_text, button_text, alpha);
 draw_set_font(font_big);
 </string>
           </argument>

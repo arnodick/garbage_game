@@ -93,6 +93,7 @@
     <object>objects\oWin</object>
     <object>objects\oButton</object>
     <object>objects\oButtonend</object>
+    <object>objects\oBar</object>
     <object>objects\oHand</object>
     <object>objects\oThing</object>
     <object>objects\oMouse</object>

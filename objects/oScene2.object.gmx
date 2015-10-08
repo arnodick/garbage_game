@@ -41,6 +41,11 @@ global.raccoon_count = 0;   //for raccoon coming from specific directions in lev
 global.garbage_fountain_timer = room_speed *10; // how long before garbage fountain starts in level 4
 global.room_buffer = 16;    //how far from edge of screen garbages can go
 
+if (global.plus_mode == true)
+{
+    instance_create(0,0,oBar);
+}
+
 // how long game lasts
 if (global.level_count != 3)
 {
