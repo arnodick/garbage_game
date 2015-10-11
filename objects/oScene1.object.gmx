@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Inits
 audio_stop_all();   //just to stop garbage noises from oAsleep
+window_set_cursor(cr_none);
 
 text_angle[0] = -7;
 text_angle[1] = 5;
