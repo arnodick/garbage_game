@@ -28,7 +28,6 @@
             <string>///Inits
 window_set_cursor(cr_none);
 draw_set_font(font);
-draw_set_halign(fa_center);
 
 // for garbage bag graphical effects
 width = 1;

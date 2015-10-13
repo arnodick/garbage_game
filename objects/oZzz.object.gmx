@@ -138,11 +138,6 @@ image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
 alpha[0]        += 0.02;
 alpha[1]        = ( abs((sin(alpha[0]))) );
 
-//mid_len = point_distance(x, y, room_width/2, room_height/2)/2;
-mid_dir = point_direction(x, y, room_width/2, room_height/2);
-mid_x = lengthdir_x(2, mid_dir);
-mid_y = lengthdir_y(2, mid_dir);
-
 if (global.level_count != 3)
 {
     // play random snore

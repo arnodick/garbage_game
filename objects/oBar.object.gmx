@@ -58,7 +58,7 @@ bar_x2=x1+(length/4);
 //bar_x2--;
 secs_left = (score + 2) - oScene2.game_timer_bar;
 bar_x2=x1+((length/4)*secs_left);
-if (bar_x2 &lt;= x1)
+if (bar_x2 &lt;= x1 + 5)
 {
     bar_x2 = x1+5;
 }
