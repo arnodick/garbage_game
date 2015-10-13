@@ -81,48 +81,50 @@ if (alpha &lt; 1)
 else
 {
     window_set_cursor(cr_uparrow);
-if (mouse_check_button_pressed(mb_left))
-{
-    if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
+    if (mouse_check_button_pressed(mb_left))
     {
-        if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
+        if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
         {
-            button_pressed = true;
-            if (!audio_is_playing(snd_clickdown))
+            if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
             {
-                audio_play_sound(snd_clickdown, 1, false);
+                button_pressed = true;
+                if (!audio_is_playing(snd_clickdown))
+                {
+                    audio_play_sound(snd_clickdown, 1, false);
+                }
             }
         }
     }
-}
-// if release on button, start new round
-else if (mouse_check_button_released(mb_left))
-{
-    if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
+    // if release on button, start new round
+    else if (mouse_check_button_released(mb_left))
     {
-        if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
+        if ( (mouse_x &gt; x) and (mouse_x &lt; (x + width)) )
         {
-            button_pressed = false;
-            if (!audio_is_playing(snd_clickup))
+            if ( (mouse_y &gt; y) and (mouse_y &lt; (y + height)) )
             {
-                audio_play_sound(snd_clickup, 1, false);
+                button_pressed = false;
+                if (!audio_is_playing(snd_clickup))
+                {
+                    audio_play_sound(snd_clickup, 1, false);
+                }
+                restarting = true;
             }
-            restarting = true;
         }
     }
-}
-}
+    
+    
+    if (button_pressed == true)
+    {
+        button_text = c_dkgray;
+        button_colour = c_dkergray;
+        text = text_alt;
+    }
+    else
+    {
+        button_text = button_text_init;
+        button_colour = button_colour_init;
+    }
 
-if (button_pressed == true)
-{
-    button_text = c_dkgray;
-    button_colour = c_dkergray;
-    text = text_alt;
-}
-else
-{
-    button_text = button_text_init;
-    button_colour = button_colour_init;
 }
 
 //if button released, when sound is over, new round

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Inits
 text_angle[0] = -7;
-text_angle[1] = 5;
+text_angle[1] = 2;
 
 text_size[0] = 1;
 text_size[1] = 0.1;
@@ -85,7 +85,7 @@ if (random(1) &lt; 0.05)
           <argument>
             <kind>1</kind>
             <string>///TEXT
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 14, "RACCOON#ASSAULT", 10, 160, text_size[1], text_size[1], text_angle[0], c_red, c_red, c_orange, c_orange, 1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 30, "RACCOON#ASSAULT", 10, 160, text_size[1], text_size[1], text_angle[0], c_red, c_red, c_orange, c_orange, 1);
 </string>
           </argument>
         </arguments>

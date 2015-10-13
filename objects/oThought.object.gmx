@@ -135,7 +135,7 @@ else if (y &gt; room_height)
             <string>///Sprite + chain
 
 draw_sprite_ext( sprite_index, 0, x, y, 1, 1, image_angle, c_white, 1 );
-draw_line_width_colour(x, y, x + lengthdir_x(12 + (clicked*9), 270 - hspeed*6), y + lengthdir_y(12 + (clicked*9), 270 - hspeed*6), 2, c_gray, c_gray);
+draw_line_width_colour(x, y, x + lengthdir_x(18 + (clicked*12), 270 - hspeed*6), y + lengthdir_y(18 + (clicked*12), 270 - hspeed*6), 2, c_gray, c_gray);
 
 if (global.plus_mode == true)
 {

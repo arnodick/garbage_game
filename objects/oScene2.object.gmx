@@ -227,8 +227,8 @@ for(var i = 0; i &lt; 8; i++)  //loop through 8 possible splats
     draw_background_ext(bck_splat, splat_coord[i] &amp; $000000ff, (splat_coord[i] &amp; $0000ff00) &gt;&gt; 8, 1, 1, (splat_coord[i] &amp; $00ff0000) &gt;&gt; 16, c_white, splats &amp; bitz/*draw only splats that have bit turned on*/);
 
 }
-draw_text_colour(room_width-10, 10, string(oScene2.game_timer_bar), c_red, c_red, c_red, c_red, 1);
-draw_text_colour(room_width-10, 20, string(oScene2.game_timer_secs), c_red, c_red, c_red, c_red, 1);
+//draw_text_colour(room_width-10, 10, string(oScene2.game_timer_bar), c_red, c_red, c_red, c_red, 1);
+//draw_text_colour(room_width-10, 20, string(oScene2.game_timer_secs), c_red, c_red, c_red, c_red, 1);
 </string>
           </argument>
         </arguments>

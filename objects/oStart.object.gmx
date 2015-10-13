@@ -30,6 +30,8 @@
 global.level_count = 0;
 global.score_total = 0;
 global.plus_mode = false;
+global.score_total_run = 0;
+global.games_count = 0;
 room_goto(rAsleep);
 </string>
           </argument>
