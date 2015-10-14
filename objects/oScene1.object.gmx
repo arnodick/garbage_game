@@ -31,10 +31,14 @@ window_set_cursor(cr_none);
 
 text_angle[0] = -7;
 text_angle[1] = 5;
-text[0] = "what was that noise?";
-text[1] = "not again...";
-text[2] = "this is hell";
-text[3] = "no more garbage... please";
+text[0, 0] = "what was that noise?";
+text[1, 0] = "not again...";
+text[2, 0] = "this is hell";
+text[3, 0] = "no more garbage... please";
+text[0, 1] = "does it stop?";
+text[1, 1] = "there is no point";
+text[2, 1] = "every moment is a nightmare";
+text[3, 1] = "garbage will be my end";
 
 sound[0] = snd_garbage1;
 sound[1] = snd_garbage2;
@@ -125,7 +129,7 @@ if (shake_timer &gt; 0)
             <kind>1</kind>
             <string>///TEXT + BORDER
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_red, c_red, c_red, c_red, true);
-draw_text_ext_transformed_colour(room_width/2, room_height/2, text[global.level_count], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
+draw_text_ext_transformed_colour(room_width/2, room_height/2, text[global.level_count, global.games_count], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
 </string>
           </argument>
         </arguments>

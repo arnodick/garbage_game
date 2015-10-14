@@ -43,6 +43,8 @@ text_angle[1]  = ( (sin(text_angle[0]))*2 ) + 1;
 image_scale[0]  = 0;
 image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
 
+audio_play_sound(snd_music,1, true);
+
 //room_goto(rAsleep);
 </string>
           </argument>
@@ -68,7 +70,7 @@ image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
             <kind>1</kind>
             <string>///START
 
-text_angle[0]  += 0.1;
+text_angle[0]  += 0.105;
 text_angle[1]  = (sin(text_angle[0]))*3;
 
 image_scale[0]  += 0.01;
@@ -76,6 +78,7 @@ image_scale[1]  = ( abs((sin(image_scale[0]))) ) + 0.5;
 
 if (mouse_check_button_released(mb_left))
 {
+    audio_stop_all();
     room_goto(rAsleep);
 }
 </string>
@@ -101,6 +104,7 @@ if (mouse_check_button_released(mb_left))
           <argument>
             <kind>1</kind>
             <string>///INSTRUCTIONS
+draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_blue, c_blue, c_blue, c_blue, true);
 draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 40, "WELCOME TO: GARBAGE GAME", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,1);
 draw_text_ext_transformed_colour(room_width/2, (room_height/2 - 10), "u r using mouse to garbage garbages", 10, 150, image_scale[1], image_scale[1], 0, c_blue,c_blue,c_blue,c_blue,1);
 </string>
