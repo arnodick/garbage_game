@@ -29,7 +29,7 @@
 
 text_init = "AGAIN?";
 text = text_init;
-text_alt = "ugh why";
+text_alt = choose("ugh why", "nooooo", "really?");
 
 width = 100;
 height = 40;

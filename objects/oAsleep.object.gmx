@@ -54,7 +54,7 @@ else if(global.level_count == 4)
 win_string = "you got about " + string( ((global.score_total div 5) * 5) + choose(-5, 0, 5) ) + " garbages i think";
 if (global.plus_mode == true)
 {
-    win_string =  "you got like " + string( ((global.score_total_run div 5) * 5 ) + choose(-5, 0, 5) ) + " garbages in " + global.games_count + " games maybe";
+    win_string =  "you got like " + string( ((global.score_total_run div 5) * 5 ) + choose(-5, 0, 5) ) + " garbages in " + global.games_count + " games " + choose("perhaps", "maybe", "i guess");
 }
 </string>
           </argument>
