@@ -29,7 +29,7 @@
 //these are initted only ONCE, so restart after level doesn't wipe them out
 global.level_count = 0;
 global.score_total = 0;
-global.plus_mode = false;
+global.plus_mode = true;
 global.score_total_run = 0;
 global.games_count = 0;
 
