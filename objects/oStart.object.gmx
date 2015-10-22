@@ -29,9 +29,29 @@
 //these are initted only ONCE, so restart after level doesn't wipe them out
 global.level_count = 0;
 global.score_total = 0;
-global.plus_mode = true;
-global.score_total_run = 0;
-global.games_count = 0;
+global.plus_mode = false;
+
+ini_open("score.ini");
+global.score_total_run = ini_read_real("progress", "score_total_run", 0);
+global.games_count = ini_read_real("progress", "games_count", 0);
+if ((global.score_total_run == 0) and (global.games_count == 0))
+{
+    ini_write_real("progress", "score_total_run", 0);
+    ini_write_real("progress", "games_count", 0);
+}
+else
+{
+    global.plus_mode = true;
+}
+ini_close();
+
+var file;
+file = file_text_open_write(working_directory + "\level.txt");
+file_text_write_string(file, "hello blah");
+file_text_close(file);
+
+//global.score_total_run = 0;
+//global.games_count = 0;
 
 draw_set_halign(fa_center);
 draw_set_font(font_big);
@@ -45,7 +65,33 @@ image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
 
 audio_play_sound(snd_music,1, true);
 
+alarm[0] = 1;
+
 //room_goto(rAsleep);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(room_width/2, room_height/2, oFloater);
+alarm[0] = room_speed;
 </string>
           </argument>
         </arguments>
@@ -81,6 +127,21 @@ if (mouse_check_button_released(mb_left))
     audio_stop_all();
     room_goto(rAsleep);
 }
+if (keyboard_check(vk_control))
+{
+    if (keyboard_check_pressed(ord('E')))
+    {
+        audio_play_sound(snd_garbage2, 1, false);
+        global.score_total_run = 0;
+        global.games_count = 0;
+        ini_open("score.ini");
+        ini_write_real("progress", "score_total_run", global.score_total_run);
+        ini_write_real("progress", "games_count", global.games_count);
+        ini_close();
+    }
+}
+
+//instance_deactivate_region(10, 10, room_width - 10, room_height - 10, false, true);
 </string>
           </argument>
         </arguments>
@@ -105,8 +166,19 @@ if (mouse_check_button_released(mb_left))
             <kind>1</kind>
             <string>///INSTRUCTIONS
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_blue, c_blue, c_blue, c_blue, true);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 40, "WELCOME TO: GARBAGE GAME", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,1);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2 - 10), "u r using mouse to garbage garbages", 10, 150, image_scale[1], image_scale[1], 0, c_blue,c_blue,c_blue,c_blue,1);
+draw_set_font(font_mono);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 53, "________", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 52, "_____", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 51, "__", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 38, "_____________", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 37, "_________", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 36, "___", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+
+draw_set_font(font_big);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 45, "WELCOME TO:", 10, 150, 0.6, 0.6, text_angle[1], c_orange,c_orange,c_orange,c_orange,1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 35, "GARBAGE GAME", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2 - 15), "u r using mouse to garbage garbages", 10, 150, image_scale[1], image_scale[1], 0, c_blue,c_blue,c_blue,c_blue,1);
 </string>
           </argument>
         </arguments>

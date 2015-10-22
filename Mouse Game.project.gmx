@@ -3,6 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="2" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_squeak</sound>
@@ -81,9 +82,11 @@
   <fonts name="fonts">
     <font>fonts\font</font>
     <font>fonts\font_big</font>
+    <font>fonts\font_mono</font>
   </fonts>
   <objects name="objects">
     <object>objects\oStart</object>
+    <object>objects\oFloater</object>
     <object>objects\oScreen</object>
     <object>objects\oAsleep</object>
     <object>objects\oZzz</object>
