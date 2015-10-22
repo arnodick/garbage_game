@@ -45,28 +45,28 @@ text[2, 2] = "every moment is a nightmare";
 text[3, 2] = "the garbage will be my end";
 text[0, 3] = "what is up with these raccoons?";
 text[1, 3] = "we never used to have raccoons";
-text[2, 3] = "they descended upon us, bringing garbage";
-text[3, 3] = "raccoonsgarbageraccoonsgarbageraccoons...";
+text[2, 3] = "they descended upon us, and with them came the garbage";
+text[3, 3] = "never ending tides flowing over me. raccoonsgarbageraccoonsgarbageraccoons...";
 text[0, 4] = "maybe garbage isn't so bad...";
 text[1, 4] = "it's kind of pretty in its own way";
 text[2, 4] = "when you think about it, the world needs garbage";
 text[3, 4] = "i love garbage";
 text[0, 5] = "this can't be real";
 text[1, 5] = "there is no garbage. it is an illusion";
-text[2, 5] = "the garbage isn't real";
-text[3, 5] = "the garbage isn't real";
+text[2, 5] = "the garbage is just in my head";
+text[3, 5] = "i must have garbage in my head i guess";
 text[0, 6] = "i have become numb to the garbage";
 text[1, 6] = "yet every garbage stings like a burning needle";
 text[2, 6] = "perhaps this is my punishment for ill deeds";
 text[3, 6] = "i am sisyphus, and garbage is my rock";
 text[0, 7] = "we never talk any more";
-text[1, 7] = "let's talk about how our day went";
+text[1, 7] = "let's talk about how the day went";
 text[2, 7] = "did yours go well? did you see any friends?";
-text[3, 7] = "that's nice. i threw garbage into a can";
-text[0, 8] = "the metallic tinge of garbage rests on my tongue";
-text[1, 8] = "a permanent reminder of my fate";
+text[3, 7] = "that's nice. i threw garbage into a garbage can";
+text[0, 8] = "the metallic tinge of garbage rests permanently on my tongue";
+text[1, 8] = "a constant reminder of my fate";
 text[2, 8] = "my fingers scarred from a thousand broken bottles";
-text[3, 8] = "my hands only know the touch of garbage";
+text[3, 8] = "my hands know only the touch of garbage. they have forgotten the feeling of everything else. i can't remember the soft, prickly feel of a wool blanket, or the caress of warm, salty ocean water. nothing.";
 text[0, 9] = "i can feel the end coming";
 text[1, 9] = "soon there will be no more garbage";
 text[2, 9] = "i can hear the garbage truck now, coming around the bend";
@@ -163,11 +163,11 @@ if (shake_timer &gt; 0)
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_red, c_red, c_red, c_red, true);
 if (global.games_count &lt;= 9)
 {
-    draw_text_ext_transformed_colour(room_width/2, room_height/2, text[global.level_count, global.games_count], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
+    draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 10, text[global.level_count, global.games_count], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
 }
 else
 {
-    draw_text_ext_transformed_colour(room_width/2, room_height/2, text[3, 9], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
+    draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 10, text[3, 9], 10, 160, 1, 1, text_angle[0], c_white, c_white, c_white, c_white, 1);
 }
 </string>
           </argument>

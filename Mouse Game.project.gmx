@@ -67,6 +67,7 @@
     <sprite>sprites\sdfg</sprite>
     <sprite>sprites\sprite17</sprite>
     <sprite>sprites\sprChip</sprite>
+    <sprite>sprites\sprHam</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -115,6 +116,7 @@
     <object>objects\oCig</object>
     <object>objects\oChip</object>
     <object>objects\oRaccoon</object>
+    <object>objects\oHam</object>
     <object>objects\oDebug</object>
     <object>objects\oPause</object>
   </objects>

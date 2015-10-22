@@ -26,13 +26,30 @@
           <argument>
             <kind>1</kind>
             <string>///INITS
-sprite_index = choose(sprMouse, sprBottle, sprShard, sprCan, sprTampon, sprGarbageghost, sprRaccoon1, sprCigpack, sprCig, sprBag);
-image_alpha = 0.6;
-image_speed = 0;
-image_xscale = 0.1;
-image_yscale = 0.1;
-speed = 1;
-direction = irandom(359);
+image_scale[0] = 0;
+image_scale[1] = 0;
+
+alpha[0] = 0;
+alpha[1] = 0;
+
+char[0] = "Z";
+char[1] = ".";
+
+char_switch[0] = false;
+char_switch[1] = false;
+
+switch_value = 0;
+
+alarm[0] = 60;
+if (global.level_count == 4)
+{
+    alarm[1] = 3*room_speed;
+    shake_timer = 0;
+}
+
+sound[0] = snd_snore1;
+sound[1] = snd_snore2;
+sound[2] = snd_snore3;
 </string>
           </argument>
         </arguments>
