@@ -63,11 +63,41 @@ text_angle[1]  = ( (sin(text_angle[0]))*2 ) + 1;
 image_scale[0]  = 0;
 image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
 
+instructions_switch = false;
+instructions[0] = "u r using mouse to garbage garbages";
+instructions[1] = "left click#to start";
+
 audio_play_sound(snd_music,1, true);
 
 alarm[0] = 1;
+alarm[1] = room_speed * 2.625;
 
 //room_goto(rAsleep);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///INSTRUCTIONS
+instructions_switch = !instructions_switch;
+alarm[1] = room_speed * 2.625;
 </string>
           </argument>
         </arguments>
@@ -120,7 +150,7 @@ alarm[0] = room_speed*1.02;
 text_angle[0]  += 0.105;
 text_angle[1]  = (sin(text_angle[0]))*3;
 
-image_scale[0]  += 0.01;
+image_scale[0]  += 0.02;
 image_scale[1]  = ( abs((sin(image_scale[0]))) ) + 0.5;
 
 if (mouse_check_button_released(mb_left))
@@ -180,7 +210,7 @@ draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 36, "___", 10, 
 draw_set_font(font_big);
 draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 45, "WELCOME TO:", 10, 150, 0.6, 0.6, text_angle[1], c_orange,c_orange,c_orange,c_orange,1);
 draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 35, "GARBAGE GAME", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,1);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2 - 15), "u r using mouse to garbage garbages", 10, 150, image_scale[1], image_scale[1], 0, c_blue,c_blue,c_blue,c_blue,1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2 - 15), instructions[instructions_switch], 10, 150, image_scale[1], image_scale[1], 0, c_blue,c_blue,c_blue,c_blue,1);
 </string>
           </argument>
         </arguments>

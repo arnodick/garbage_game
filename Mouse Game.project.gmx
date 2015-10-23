@@ -77,6 +77,7 @@
   <scripts name="scripts">
     <script>scripts\grab_init.gml</script>
     <script>scripts\thing_grab.gml</script>
+    <script>scripts\thing_grab_ham.gml</script>
     <script>scripts\sound_init.gml</script>
     <script>scripts\value_oscillate.gml</script>
   </scripts>

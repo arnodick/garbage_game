@@ -31,6 +31,17 @@ text_angle[1] = 2;
 
 text_size[0] = 1;
 text_size[1] = 0.1;
+
+text_colour = c_red;
+
+if (global.games_count == 2)
+{
+    text = "AN#ENTIRE#HAM!?"
+}
+else
+{
+    text = "RACCOON#ASSAULT";
+}
 </string>
           </argument>
         </arguments>
@@ -55,10 +66,21 @@ text_size[1] = 0.1;
             <kind>1</kind>
             <string>///RACCOON STRIKE CONTROLLER
 value_oscillate(text_angle, 45, -45);   //wobble text
-text_size[0]  += 0.1;
-text_size[1]  = ( abs((sin(text_size[0])))*5 ) + 1; //oscillate text size
+text_size[0]  += 0.03;
+text_size[1]  = ( abs((sin(text_size[0])))*5 ) + 0.4; //oscillate text size
+
+text_colour = merge_colour( c_red, c_yellow, abs(sin(text_size[0])) );
+
+//HAMMY TIMES on level 3
+if (global.games_count == 2)
+{
+    if (!instance_exists(oHam))
+    {
+        instance_create(room_width/2, room_width/2, oHam);
+    }
+}
 // make a shit load of RACCOON
-if (random(1) &lt; 0.05)
+else if (random(1) &lt; 0.05)
 {
     instance_create(choose(0, room_width), irandom(room_height), oRaccoon);
 }
@@ -85,7 +107,7 @@ if (random(1) &lt; 0.05)
           <argument>
             <kind>1</kind>
             <string>///TEXT
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 30, "RACCOON#ASSAULT", 10, 160, text_size[1], text_size[1], text_angle[0], c_red, c_red, c_orange, c_orange, 1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 30, text, 7, 160, text_size[1], text_size[1], text_angle[0], text_colour, text_colour, text_colour, text_colour, 1);
 </string>
           </argument>
         </arguments>
