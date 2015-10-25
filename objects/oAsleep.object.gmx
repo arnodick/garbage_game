@@ -124,9 +124,12 @@ if (global.level_count == 2)
         {
             image_alpha = 0.5;
             direction_init = (point_direction(x, y, room_width/2, room_height/2));
-            if (global.games_count == 2)
+            if (global.plus_mode == true)
             {
-                sprite_index = sprHam;
+                if ( (global.games_count mod 2) == 0)
+                {
+                    sprite_index = sprHam;
+                }
             }
         }
     }
