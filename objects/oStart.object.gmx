@@ -163,6 +163,7 @@ if (keyboard_check(vk_control))
     if (keyboard_check_pressed(ord('E')))
     {
         audio_play_sound(snd_garbage2, 1, false);
+        message_make(room_width/2, room_height - 30, "SCORE DATA ERASED", room_speed*2);
         global.plus_mode = false;
         global.score_total_run = 0;
         global.games_count = 0;

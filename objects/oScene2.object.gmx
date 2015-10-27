@@ -142,7 +142,7 @@ if (game_timer == raccoon_spawn)
 // check for racc ass on level 3
 if(global.level_count == 2)
 {
-    if (score &gt;= 25)
+    if (score &gt;= 30)
     {
         if (game_timer == raccoon_ass_spawn)
         {

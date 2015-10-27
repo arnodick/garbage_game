@@ -80,6 +80,7 @@
     <script>scripts\thing_grab_ham.gml</script>
     <script>scripts\sound_init.gml</script>
     <script>scripts\value_oscillate.gml</script>
+    <script>scripts\message_make.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font</font>
@@ -100,6 +101,7 @@
     <object>objects\oButton</object>
     <object>objects\oButtonend</object>
     <object>objects\oBar</object>
+    <object>objects\oMessage</object>
     <object>objects\oHand</object>
     <object>objects\oThing</object>
     <object>objects\oMouse</object>
