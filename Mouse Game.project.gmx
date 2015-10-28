@@ -43,6 +43,7 @@
     <sound>sound\snd_bagcrumple</sound>
     <sound>sound\snd_bagcrumple2</sound>
     <sound>sound\snd_bweow</sound>
+    <sound>sound\snd_coin</sound>
     <sound>sound\snd_music</sound>
   </sounds>
   <sprites name="sprites">
@@ -68,6 +69,7 @@
     <sprite>sprites\sprite17</sprite>
     <sprite>sprites\sprChip</sprite>
     <sprite>sprites\sprHam</sprite>
+    <sprite>sprites\sprCoin</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -103,6 +105,7 @@
     <object>objects\oBar</object>
     <object>objects\oMessage</object>
     <object>objects\oBonus</object>
+    <object>objects\oPause</object>
     <object>objects\oHand</object>
     <object>objects\oThing</object>
     <object>objects\oMouse</object>
@@ -121,8 +124,8 @@
     <object>objects\oChip</object>
     <object>objects\oRaccoon</object>
     <object>objects\oHam</object>
+    <object>objects\oCoin</object>
     <object>objects\oDebug</object>
-    <object>objects\oPause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rStart</room>

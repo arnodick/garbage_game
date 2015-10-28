@@ -199,18 +199,21 @@ if (keyboard_check(vk_control))
             <kind>1</kind>
             <string>///INSTRUCTIONS
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, c_blue, c_blue, c_blue, c_blue, true);
-draw_set_font(font_mono);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 53, "________", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 52, "_____", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 51, "__", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
 
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 38, "_____________", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 37, "_________", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 36, "___", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,0.8);
+/*
+draw_set_font(font_mono);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 53, "________", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 52, "_____", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 51, "__", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,0.8);
+
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 38, "_____________", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 37, "_________", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,0.8);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 36, "___", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,0.8);
+*/
 
 draw_set_font(font_big);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 45, "WELCOME TO:", 10, 150, 0.6, 0.6, text_angle[1], c_orange,c_orange,c_orange,c_orange,1);
-draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 35, "GARBAGE GAME", 10, 150, 1, 1, text_angle[1], c_orange,c_orange,c_orange,c_orange,1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 45, "WELCOME TO:", 10, 150, 0.8, 0.8, text_angle[1], c_red,c_red,c_red,c_red,1);
+draw_text_ext_transformed_colour(room_width/2, (room_height/2) - 35, "GARBAGE GAME", 10, 150, 1, 1, text_angle[1], c_red,c_red,c_red,c_red,1);
 draw_text_ext_transformed_colour(room_width/2, (room_height/2 - 15), instructions[instructions_switch], 10, 150, image_scale[1], image_scale[1], 0, c_blue,c_blue,c_blue,c_blue,1);
 </string>
           </argument>

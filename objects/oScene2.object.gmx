@@ -32,6 +32,8 @@ border_colour = c_yellow;
 text_angle = 5; //score text's angle (rotates)
 scored = false; //need this to do stuff like shake when scoring
 score = 0;  // init score to 0 for this round
+score_size = 4;
+
 game_timer = 0;
 game_timer_secs = 0;
 game_timer_bar = 0;
@@ -100,7 +102,8 @@ if (scored == true)
     if (!instance_exists(oWin)) //unless level is done
     {
         score++;
-        text_angle = 0;
+        text_angle = 30;
+        score_size = 8;
         with (oDoor)
         {
             oDoor.shake_timer = random_range(50, 111);
@@ -108,6 +111,11 @@ if (scored == true)
         }
         scored = false;
     }
+}
+
+if (score_size &gt; 4)
+{
+    score_size -= 0.2;
 }
 
 //spawn 2 more raccoons after first level
@@ -257,7 +265,7 @@ for(var i = 0; i &lt; 8; i++)  //loop through 8 possible splats
           <argument>
             <kind>1</kind>
             <string>///SCORE + BORDER
-draw_text_ext_transformed_colour(5, 5, string(score), 10, 160, 4, 4, text_angle, c_white, c_white, c_white, c_white, 1);
+draw_text_ext_transformed_colour(5, 5, string(score), 10, 160, score_size, score_size, text_angle, c_white, c_white, c_white, c_white, 1);
 draw_rectangle_colour(0, 0, room_width - 1, room_height - 1, border_colour, border_colour, border_colour, border_colour, true);
 </string>
           </argument>

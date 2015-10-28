@@ -39,6 +39,8 @@ text_size[1]  = 0.1;
 
 text_colour = merge_colour( c_red, c_yellow, abs(sin(text_size[0])) );
 
+score_size = 1;
+
 alarm[0] = room_speed *15;
 alarm[1] = room_speed * 2;
 </string>
@@ -124,7 +126,7 @@ with (oGarbage)
 {
     if (random(1) &lt; garbage_chance)
     {
-        var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
+        var garbage = instance_create(x, y, oCoin);
         with (garbage)
         {
             speed = random_range(8, 13);
@@ -133,7 +135,10 @@ with (oGarbage)
         speed = garbage.speed;
         direction = -garbage.direction;
         score++;
-        oScene2.text_angle = 0;
+        oScene2.text_angle = 30;
+        oScene2.score_size = 8;
+        audio_sound_pitch(snd_coin, random_range(0.95, 1.05));
+        audio_play_sound(snd_coin, 1, false);
     }
 }
 with (oScene2)
