@@ -102,6 +102,7 @@
     <object>objects\oButtonend</object>
     <object>objects\oBar</object>
     <object>objects\oMessage</object>
+    <object>objects\oBonus</object>
     <object>objects\oHand</object>
     <object>objects\oThing</object>
     <object>objects\oMouse</object>

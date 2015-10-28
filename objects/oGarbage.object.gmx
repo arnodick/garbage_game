@@ -106,18 +106,13 @@ if (random(1) &lt; garbage_chance)
     }
     else if (global.garbage_fountain_timer &lt;= 0)
     {
-        if ( ((global.games_count mod 3) == 0) and (global.plus_mode == true) )
+        if ( ((global.games_count mod 2) == 0) and (global.plus_mode == true) )
         {
             //BONUS ROUND
-            var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
-            with (garbage)
+            if (!instance_exists(oBonus))
             {
-                speed = random_range(8, 13);
-                direction = oGarbage.image_angle + random_range(210, 262);
+                instance_create(room_width/2, room_height/2, oBonus);
             }
-            speed = garbage.speed;
-            direction = -garbage.direction;
-            score++;
         }
         else if (instance_number(oGarbage) &lt; 160)
         {
