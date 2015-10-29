@@ -93,14 +93,20 @@ if (random(1) &lt; garbage_chance)
 {
     if (global.level_count != 3)
     {
-        var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
+        if ( ((global.games_count mod 3) == 0) and (global.plus_mode == true) and instance_exists(oRaccoon_assault))
+        {
+            var garbage = instance_create(x, y, choose(oCoin, oShard));
+        }
+        else
+        {
+            var garbage = instance_create(x, y, irandom_range(oMouse, oTampon));
+        }
         //irandom_range(oMouse, oTampon)
         with (garbage)
         {
             speed = random_range(8, 13);
             direction = oGarbage.image_angle + random_range(210, 262);
         }
-        
         speed = garbage.speed;
         direction = -garbage.direction;
     }

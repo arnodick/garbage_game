@@ -36,7 +36,11 @@ text_colour = c_red;
 
 if ( ((global.games_count mod 2) == 0) and (global.plus_mode == true) )
 {
-    text = "AN#ENTIRE#HAM!?"
+    text = "AN#ENTIRE#HAM!?";
+}
+else if ( ((global.games_count mod 3) == 0) and (global.plus_mode == true) )
+{
+    text = "JUST#GLASS#AND#MONEY";
 }
 else
 {
@@ -82,7 +86,10 @@ if ( ((global.games_count mod 2) == 0) and (global.plus_mode == true) )
 // make a shit load of RACCOON
 else if (random(1) &lt; 0.05)
 {
-    instance_create(choose(0, room_width), irandom(room_height), oRaccoon);
+    if !( ((global.games_count mod 3) == 0) and (global.plus_mode == true) )
+    {
+        instance_create(choose(0, room_width), irandom(room_height), oRaccoon);
+    }
 }
 </string>
           </argument>
