@@ -46,5 +46,21 @@ if ( (x <= (oDoor.door_width - global.room_buffer)) and (y <= global.room_buffer
     {
         oScene2.scored = true;
         instance_deactivate_object(id);
+        if (object_index == oCoin)
+        {
+            score -= 11;
+            if (instance_exists(oRaccoon_assault))
+            {
+                with (oRaccoon_assault)
+                {
+                    text = "MONEY#AIN'T#GARBAGE!!";
+                    alarm[0] = room_speed * 6;
+                }
+            }
+        }
+        else if (object_index == oShard_special)
+        {
+            score += 9;
+        }
     }
 }

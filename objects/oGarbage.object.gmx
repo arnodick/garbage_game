@@ -95,7 +95,7 @@ if (random(1) &lt; garbage_chance)
     {
         if ( ((global.games_count mod 3) == 0) and (global.plus_mode == true) and instance_exists(oRaccoon_assault))
         {
-            var garbage = instance_create(x, y, choose(oCoin, oShard));
+            var garbage = instance_create(x, y, choose(oCoin, oShard_special));
         }
         else
         {

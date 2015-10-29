@@ -118,13 +118,14 @@
     <object>objects\oDoor</object>
     <object>objects\oFloor</object>
     <object>objects\oShard</object>
+    <object>objects\oShard_special</object>
+    <object>objects\oCoin</object>
     <object>objects\oCut</object>
     <object>objects\oBlood</object>
     <object>objects\oCig</object>
     <object>objects\oChip</object>
     <object>objects\oRaccoon</object>
     <object>objects\oHam</object>
-    <object>objects\oCoin</object>
     <object>objects\oDebug</object>
   </objects>
   <rooms name="rooms">

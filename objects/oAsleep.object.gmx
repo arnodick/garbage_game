@@ -131,6 +131,10 @@ if (global.level_count == 2)
                 {
                     sprite_index = sprHam;
                 }
+                if ( (global.games_count mod 3) == 0)
+                {
+                    sprite_index = sprCoin;
+                }
             }
         }
     }

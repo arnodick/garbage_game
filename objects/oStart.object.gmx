@@ -64,8 +64,8 @@ image_scale[0]  = 0;
 image_scale[1]  = ( abs((sin(image_scale[0])))*2 ) + 1;
 
 instructions_switch = false;
-instructions[0] = "u r using mouse to garbage garbages";
-instructions[1] = "left click#to start";
+instructions[0] = "INSTRUCTIONS:#-left click#to grab#-release#to throw";
+instructions[1] = "-throw garbages#in can#-shake bag for more garbages";
 
 audio_play_sound(snd_music,1, true);
 
@@ -151,7 +151,7 @@ text_angle[0]  += 0.105;
 text_angle[1]  = (sin(text_angle[0]))*3;
 
 image_scale[0]  += 0.02;
-image_scale[1]  = ( abs((sin(image_scale[0]))) ) + 0.5;
+image_scale[1]  = ( abs((sin(image_scale[0]))) ) + 0.2;
 
 if (mouse_check_button_released(mb_left))
 {
