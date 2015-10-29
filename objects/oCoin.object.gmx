@@ -19,20 +19,18 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>oChip</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Inits
-grab_init(irandom(359));
-//audio_sound_pitch(snd_coin, random_range(0.95, 1.05));
-//audio_play_sound(snd_coin, 1, false);
+            <string>///INITS
+grab_init(0);
 sound_init(snd_coin);
 
 direction = random_range(-53, 12);
-speed = random_range(0, 12);
+speed = random_range(0, 18);
 </string>
           </argument>
         </arguments>
@@ -55,8 +53,7 @@ speed = random_range(0, 12);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Controller
-thing_grab(angle_init - (hspeed*10), 0);
+            <string>thing_grab(angle_init, 0);
 </string>
           </argument>
         </arguments>

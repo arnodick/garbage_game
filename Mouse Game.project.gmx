@@ -119,7 +119,7 @@
     <object>objects\oFloor</object>
     <object>objects\oShard</object>
     <object>objects\oShard_special</object>
-    <object>objects\oCoin</object>
+    <object>objects\oCoinx</object>
     <object>objects\oCut</object>
     <object>objects\oBlood</object>
     <object>objects\oCig</object>
@@ -127,6 +127,7 @@
     <object>objects\oRaccoon</object>
     <object>objects\oHam</object>
     <object>objects\oDebug</object>
+    <object>objects\oCoin</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rStart</room>
