@@ -93,11 +93,18 @@ else
             <kind>1</kind>
             <string>///RACCOON STRIKE CONTROLLER
 value_oscillate(text_angle, 45, -45);   //wobble text
-text_size[0]  += 0.03;
-text_size[1]  = ( abs((sin(text_size[0])))*5 ) + 0.4; //oscillate text size
+text_size[0]  += 0.02;
+text_size[1]  = ( abs((sin(text_size[0])))*3 ) + 0.4; //oscillate text size
 
-text_colour = merge_colour( c_red, c_yellow, abs(sin(text_size[0])) );
+text_colour = merge_colour( c_red, c_blue, abs(sin(text_size[0])) );
 
+if ( ((global.games_count mod 3) == 0) and (global.plus_mode == true) )
+{
+    with (oGarbage)
+    {
+        garbage_chance = 0.9;
+    }
+}
 //HAMMY TIMES on level 3
 if ( ((global.games_count mod 2) == 0) and (global.plus_mode == true) )
 {

@@ -133,8 +133,12 @@ if (global.level_count == 2)
                 }
                 if ( (global.games_count mod 3) == 0)
                 {
-                    sprite_index = sprCoin;
+                    sprite_index = choose(sprCoin, sprShard);
                 }
+            }
+            if (sprite_index == sprRaccoon1)
+            {
+                image_blend = c_red;
             }
         }
     }
